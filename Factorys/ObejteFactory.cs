@@ -1,0 +1,90 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using DatabaseProjekt.GameObjects;
+using DatabaseProjekt.Componets;
+namespace DatabaseProjekt.Factorys
+{
+    public class ObejteFactory : Factory
+    {
+
+
+        private static ObejteFactory instance;
+
+        public static ObejteFactory Insteance
+        {
+            get
+            {
+                if ( instance == null)
+                {
+                    instance = new ObejteFactory();
+                }
+                return instance;
+            }
+        }
+
+
+      
+
+
+
+
+        public override GameObject Create(string type)
+        {
+
+            GameObject go = new GameObject();
+            switch (type)
+            {
+                case "Curser":
+                   go.addComponet(new Curser());
+                   go.addComponet(new SpriteRender(type));
+                   go.addComponet(new Colider());
+                  
+                   break;
+                case "StartKnap":
+                   
+                    go.addComponet(new SpriteRender(type));
+                 
+                    go.addComponet(new Colider());
+
+                    go.addComponet(new StarteButton());
+                    break;
+
+            default:
+                    break;
+            }
+
+
+
+            return go;
+
+       
+        }
+
+        public override GameObject Create(string type, ContentManager content)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override GameObject Create(string type, Vector2 Position)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override GameObject Create(string type, Vector2 Position, ContentManager content)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override GameObject[] Creates(string type)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}
