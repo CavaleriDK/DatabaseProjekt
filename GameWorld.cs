@@ -5,21 +5,18 @@ using System.Collections.Generic;
 using DatabaseProjekt.Componets;
 using DatabaseProjekt.GameObjects;
 using DatabaseProjekt.Factorys;
+using DatabaseProjekt.GameState;
 
 namespace DatabaseProjekt
 {
-    /// <summary>
-    /// This is the main type for your game.
-    /// </summary>
     public class GameWorld : Game
     {
-
+      
         //private static GameWorld instance;
-       static GraphicsDeviceManager graphics;
+        static GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        OnEventClick click;
         SpriteFont font;
-        StartScreen startScreen;
+
         public static bool Cheakbool;
         public  static Vector2 Worldzice;
 
@@ -71,7 +68,6 @@ namespace DatabaseProjekt
             // TODO: Add your initialization logic here'
             
             this.IsMouseVisible = true;
-            click = new OnEventClick();
             /// setting world zise to vector2
             Worldzice = new Vector2(GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
 
@@ -180,7 +176,7 @@ namespace DatabaseProjekt
             }
 
 
-            spriteBatch.DrawString(font, $"Player Position:{click.somthign} check col: {StarteButton.CLICK}" , new Vector2(300, 5), Color.Red);
+            spriteBatch.DrawString(font, $"Player Position: check col: {StarteButton.CLICK}" , new Vector2(300, 5), Color.Red);
 
           
 
