@@ -42,17 +42,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Factorys\ObejteFactory.cs" />
-    <Compile Include="GameObjects\StarteButton.cs" />
+    <Compile Include="GameObjects\Button.cs" />
     <Compile Include="Componets\Componet.cs" />
     <Compile Include="GameWorld.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="GameObjects\Curser.cs" />
     <Compile Include="Factorys\Factory.cs" />
-    <Compile Include="OnEventClick.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Componets\SpriteRender.cs" />
-    <Compile Include="StartScreen.cs" />
     <Compile Include="Componets\TransForm.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -13,7 +13,7 @@ using DatabaseProjekt.Componets;
 
 namespace DatabaseProjekt.GameObjects
 {
-    class StarteButton : Componet
+    class Button : Componet
     {
 
    
@@ -48,11 +48,11 @@ namespace DatabaseProjekt.GameObjects
             set { _state = value; }
         }
        
-        public StarteButton()
+        public Button()
         {
             pos = new Vector2(GameWorld.Worldzice.X / 2, GameWorld.Worldzice.Y / 2);
         }
-        public StarteButton(Vector2 Position){
+        public Button(Vector2 Position){
             this.pos = Position;
         }
         public override void Attach(GameObject gameObject)
@@ -83,6 +83,7 @@ namespace DatabaseProjekt.GameObjects
                 State = state.none;
             }
 /// maybe losning
+/// 
             switch (spriteRender.spriteName)
             {
                 case "StartKnap":
@@ -104,8 +105,31 @@ namespace DatabaseProjekt.GameObjects
                             break;
                     }
                     break;
+
+                case "ExitKnap":
+                    switch (State)
+                    {
+                        case state.none:
+                            CLICK = "non";
+                            // do somthing 
+                            break;
+                        case state.Pressed:
+                            CLICK = "OHDOGODGD";
+
+                            // do SOmthing
+                            break;
+                        case state.Hover:
+                            CLICK = "Hover";
+                            /// do somthing
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
                 default:
                     break;
+                    
+                     
             }
 
             //switch (State)

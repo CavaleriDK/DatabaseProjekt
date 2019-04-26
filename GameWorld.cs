@@ -17,9 +17,9 @@ namespace DatabaseProjekt
         //private static GameWorld instance;
        static GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        OnEventClick click;
+     
         SpriteFont font;
-        StartScreen startScreen;
+       
         public static bool Cheakbool;
         public  static Vector2 Worldzice;
 
@@ -71,16 +71,11 @@ namespace DatabaseProjekt
             // TODO: Add your initialization logic here'
             
             this.IsMouseVisible = true;
-            click = new OnEventClick();
+         
             /// setting world zise to vector2
             Worldzice = new Vector2(GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
 
-            // adding curser to GameObejtes
-          //  curser = ObejteFactory.Insteance.Create("Curser");
-            gameObjects.Add(ObejteFactory.Insteance.Create("Curser"));
-            gameObjects.Add(ObejteFactory.Insteance.Create("StartKnap"));
-                
-               base.Initialize();
+            base.Initialize();
         }
 
         /// <summary>
@@ -98,7 +93,14 @@ namespace DatabaseProjekt
             spriteBatch = new SpriteBatch(GraphicsDevice);
             font = Content.Load<SpriteFont>("font");
 
-         //   curser.LoadContent(Content);
+
+            // adding curser to GameObejtes
+            //  curser = ObejteFactory.Insteance.Create("Curser");
+            gameObjects.Add(ObejteFactory.Insteance.Create("Curser"));
+            gameObjects.Add(ObejteFactory.Insteance.Create("StartKnap"));
+            gameObjects.Add(ObejteFactory.Insteance.Create("ExitKnap"));
+
+            //   curser.LoadContent(Content);
 
             foreach (var go in gameObjects)
             {
@@ -180,7 +182,7 @@ namespace DatabaseProjekt
             }
 
 
-            spriteBatch.DrawString(font, $"Player Position:{click.somthign} check col: {StarteButton.CLICK}" , new Vector2(300, 5), Color.Red);
+            spriteBatch.DrawString(font, $"Player Position: check col: {Button.CLICK}" , new Vector2(300, 5), Color.Red);
 
           
 
