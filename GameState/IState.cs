@@ -10,8 +10,8 @@ namespace DatabaseProjekt.GameState
 {
     interface IState
     {
-        void Enter();
-        void Exit();
+        void EnterState();
+        void ExitState();
         void Update(GameTime gameTime);
         void Draw(SpriteBatch spriteBatch);
 

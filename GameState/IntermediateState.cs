@@ -15,12 +15,12 @@ namespace DatabaseProjekt.GameState
             throw new NotImplementedException();
         }
 
-        public void Enter()
+        public void EnterState()
         {
             throw new NotImplementedException();
         }
 
-        public void Exit()
+        public void ExitState()
         {
             throw new NotImplementedException();
         }
