@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using DatabaseProjekt.Componets;
 using DatabaseProjekt.GameObjects;
 using DatabaseProjekt.Factorys;
+using System.Data.SQLite;
 
 namespace DatabaseProjekt
 {
@@ -15,15 +16,17 @@ namespace DatabaseProjekt
     {
 
         //private static GameWorld instance;
-       static GraphicsDeviceManager graphics;
+        static GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        OnEventClick click;
+        
         SpriteFont font;
-        StartScreen startScreen;
+        
         public static bool Cheakbool;
         public  static Vector2 Worldzice;
 
-      
+        //Gem database her maaske?
+        const string CONNECTIONSTRING = @"Data Source=camping.db;version=3;New=true;Compress=true";
+        public static SQLiteConnection connection;
         static public  List<GameObject> gameObjects { get; set; } = new List<GameObject>();
       public List<GameObject> Remove { get; set; } = new List<GameObject>();
         public List<GameObject> addGameObejts { get; set; } = new List<GameObject>();
@@ -52,6 +55,9 @@ namespace DatabaseProjekt
         /// </summary>
         public GameWorld()
         {
+            //database skal vaere her
+            connection = new SQLiteConnection(CONNECTIONSTRING);
+            connection.Open();
 
             Content = Content;
             graphics = new GraphicsDeviceManager(this);
@@ -71,7 +77,7 @@ namespace DatabaseProjekt
             // TODO: Add your initialization logic here'
             
             this.IsMouseVisible = true;
-            click = new OnEventClick();
+            
             /// setting world zise to vector2
             Worldzice = new Vector2(GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
 
@@ -180,7 +186,7 @@ namespace DatabaseProjekt
             }
 
 
-            spriteBatch.DrawString(font, $"Player Position:{click.somthign} check col: {StarteButton.CLICK}" , new Vector2(300, 5), Color.Red);
+            spriteBatch.DrawString(font, $"Player Position: check col: {StarteButton.CLICK}" , new Vector2(300, 5), Color.Red);
 
           
 
