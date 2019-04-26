@@ -25,8 +25,7 @@ namespace DatabaseProjekt
 
       
         static public  List<GameObject> gameObjects { get; set; } = new List<GameObject>();
-        public static List<Colider> Colliders { get; set; } = new List<Colider>();
-        public List<GameObject> Remove { get; set; } = new List<GameObject>();
+      public List<GameObject> Remove { get; set; } = new List<GameObject>();
         public List<GameObject> addGameObejts { get; set; } = new List<GameObject>();
 
 
@@ -93,7 +92,6 @@ namespace DatabaseProjekt
 
 
 
-        GameObject curser = new GameObject();
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
@@ -136,12 +134,7 @@ namespace DatabaseProjekt
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            mouseState = Mouse.GetState();
-
-
-            //startScreen.Updata(gameTime);
-            //curser.Update(gameTime);
-
+         
             foreach (var go in gameObjects)
             {
                 go.Update(gameTime);
@@ -160,12 +153,6 @@ namespace DatabaseProjekt
 
             addGameObejts.Clear();
 
-            if (mouseState.LeftButton == ButtonState.Pressed)
-            {
-                
-            }
-            
-            click.Click(gameTime);
            
             // TODO: Add your update logic here
 
@@ -192,11 +179,10 @@ namespace DatabaseProjekt
                 go.Draw(spriteBatch);
             }
 
-        //    startScreen.drawStartScreen(gameTime, spriteBatch);
 
-            spriteBatch.DrawString(font, $"Player Position:{click.somthign} check col: {StarteButton.CLICK}, mousePosition{StarteButton.mouseposition.X} tractage Position{StarteButton.ractagposition.X}" , new Vector2(300, 5), Color.Red);
+            spriteBatch.DrawString(font, $"Player Position:{click.somthign} check col: {StarteButton.CLICK}" , new Vector2(300, 5), Color.Red);
 
-           // curser.Draw(spriteBatch);
+          
 
             spriteBatch.End();
 

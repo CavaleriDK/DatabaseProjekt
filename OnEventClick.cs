@@ -11,21 +11,12 @@ namespace DatabaseProjekt
     class OnEventClick
     {
 
-        public string somthign = "nothing";
-        MouseState previousMouseState;
-
-   
-
-
+       public string somthign = "nothing";
+       MouseState previousMouseState;
        public OnEventClick()
         {
             previousMouseState = Mouse.GetState();
         }
-
-       
-
-
-
         public string Click(GameTime game)
         {
             MouseState mouse = Mouse.GetState();
@@ -33,8 +24,6 @@ namespace DatabaseProjekt
             if (previousMouseState.LeftButton == ButtonState.Released
                      && Mouse.GetState().LeftButton == ButtonState.Pressed)
             {
-            
-
             }
             else {
                 somthign = "nothing";

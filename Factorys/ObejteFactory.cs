@@ -44,15 +44,12 @@ namespace DatabaseProjekt.Factorys
                 case "Curser":
                    go.addComponet(new Curser());
                    go.addComponet(new SpriteRender(type));
-                   go.addComponet(new Colider());
+                   
                   
                    break;
-                case "StartKnap":
-                   
-                    go.addComponet(new SpriteRender(type));
-                 
-                    go.addComponet(new Colider());
-
+                case "StartKnap":                   
+                    go.addComponet(new SpriteRender(type));                 
+             
                     go.addComponet(new StarteButton());
                     break;
 

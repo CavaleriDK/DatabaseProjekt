@@ -16,11 +16,11 @@ namespace DatabaseProjekt.GameObjects
     class StarteButton : Componet
     {
 
-        public Vector2 pos;
-        public static bool CLICK;
-        public SpriteRender spriteRender { get; private set; }
-        private Texture2D texture;
+   
 
+        public Vector2 pos;
+        public static string CLICK;
+        public SpriteRender spriteRender { get; private set; }
         public Rectangle ColisionBox
         {
             get
@@ -34,7 +34,6 @@ namespace DatabaseProjekt.GameObjects
                 );
             }
         }
-
         public enum state
         {
             none,
@@ -42,105 +41,92 @@ namespace DatabaseProjekt.GameObjects
             Hover,
             Released
         }
-
         private state _state;
         public state State
         {
-            get{ return _state;}            
-            set{ _state = value;}
+            get { return _state; }
+            set { _state = value; }
         }
-
-        public static Vector2 mouseposition;
-        public static Vector2 ractagposition;
+       
         public StarteButton()
         {
-            pos = new Vector2(GameWorld.Worldzice.X / 2, GameWorld.Worldzice.Y/ 2);
-                
+            pos = new Vector2(GameWorld.Worldzice.X / 2, GameWorld.Worldzice.Y / 2);
         }
-
+        public StarteButton(Vector2 Position){
+            this.pos = Position;
+        }
         public override void Attach(GameObject gameObject)
         {
             base.Attach(gameObject);
-
             gameObject.transForm.positon = pos;
-            
-            //colider = (Colider)gameObject.FindCompent("Colider");
-
-
-
+    
         }
         public override void Update(GameTime gameTime)
         {
             spriteRender = (SpriteRender)gameObject.FindCompent("SpriteRender");
-            MouseState mouse = Mouse.GetState();
-            mouseposition.X = mouse.X;
-            mouseposition.Y = mouse.Y;
-            ractagposition.X = spriteRender.rectangle.X;
-            ////if (mouse.LeftButton == ButtonState.Pressed)
-            ////{
-            ////    State = state.Pressed;
-            ////}
-            ////else
-            ////{
-            ////    State = state.Hover;
-            ////}
-
-            if (ColisionBox.Contains(mouseposition.X, mouseposition.Y))
+            MouseState mouse = Mouse.GetState();             
+            ///checks om musen er inden for knappends område og om der bliver 
+            ///clickt elelr hovert
+            if (ColisionBox.Contains(mouse.X, mouse.Y))
             {
                 if (mouse.LeftButton == ButtonState.Pressed)
                 {
                     State = state.Pressed;
                 }
-                else
+                if (mouse.LeftButton == ButtonState.Released)
                 {
-                    State = state.Hover;
-                }
-
+                 State = state.Hover;
+                }                 
             }
-            //else
-            //{
-            //    State = state.none;
-            //}
-
-            switch (State)  
+            else
             {
-                case state.none:
-                 
-                    break;
-                case state.Pressed:
-                    CLICK = true;
-                    break;
-                case state.Hover:
-                    break;
-                case state.Released:
-                    CLICK = false;
+                State = state.none;
+            }
+/// maybe losning
+            switch (spriteRender.spriteName)
+            {
+                case "StartKnap":
+                    switch (State)
+                    {
+                        case state.none:
+                            CLICK = "non";
+                            // do somthing 
+                            break;
+                        case state.Pressed:
+                            CLICK = "pressed";
+                            // do SOmthing
+                            break;
+                        case state.Hover:
+                            CLICK = "Hover";
+                            /// do somthing
+                            break;
+                        default:
+                            break;
+                    }
                     break;
                 default:
                     break;
             }
 
+            //switch (State)
+            //{
+            //    case state.none:
+            //        CLICK = "non";
+            //        // do somthing 
+            //        break;
+            //    case state.Pressed:
+            //        CLICK = "pressed";
+            //        // do SOmthing
+            //        break;
+            //    case state.Hover:
+            //        CLICK = "Hover";
+            //        /// somthing
+            //        break;
+            //    default:
+            //        break;
+            //}
+
             base.Update(gameTime);
-        }
-
-
-        public override void LoadContent(ContentManager content)
-        {
-            texture = content.Load<Texture2D>("CollisionTexture");
-        }
-
-
-        public override void Draw(SpriteBatch spriteBatch)
-        {
-            Rectangle topLine = new Rectangle(ColisionBox.X, ColisionBox.Y, ColisionBox.Width, 1);
-            Rectangle bottomLine = new Rectangle(ColisionBox.X, ColisionBox.Y + ColisionBox.Height, ColisionBox.Width, 1);
-            Rectangle rightLine = new Rectangle(ColisionBox.X + ColisionBox.Width, ColisionBox.Y, 1, ColisionBox.Height);
-            Rectangle leftLine = new Rectangle(ColisionBox.X, ColisionBox.Y, 1, ColisionBox.Height);
-
-            spriteBatch.Draw(texture, topLine, null, Color.Red, 0, Vector2.Zero, SpriteEffects.None, 1);
-            spriteBatch.Draw(texture, bottomLine, null, Color.Red, 0, Vector2.Zero, SpriteEffects.None, 1);
-            spriteBatch.Draw(texture, rightLine, null, Color.Red, 0, Vector2.Zero, SpriteEffects.None, 1);
-            spriteBatch.Draw(texture, leftLine, null, Color.Red, 0, Vector2.Zero, SpriteEffects.None, 1);
-            //  spriteBatch.Draw(texture,ColisionBox, null, Color.Red, 0, Vector2.Zero, SpriteEffects.None, 1);
         }
     }
 }

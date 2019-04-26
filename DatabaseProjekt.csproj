@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="Factorys\ObejteFactory.cs" />
     <Compile Include="GameObjects\StarteButton.cs" />
-    <Compile Include="Componets\Colider.cs" />
     <Compile Include="Componets\Componet.cs" />
     <Compile Include="GameWorld.cs" />
     <Compile Include="GameObject.cs" />
