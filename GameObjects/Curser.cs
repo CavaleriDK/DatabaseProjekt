@@ -22,7 +22,6 @@ namespace DatabaseProjekt.GameObjects
 
         public override void Update(GameTime gameTime)
         {
-
             MouseState mouse = Mouse.GetState();
 
             Position.X = mouse.X;

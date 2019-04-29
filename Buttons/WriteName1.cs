@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System;
-using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -13,13 +11,14 @@ using DatabaseProjekt.Componets;
 
 namespace DatabaseProjekt.GameObjects
 {
-    class StarteButton : Componet
+    class WriteName1:Componet
     {
 
-   
-
+        public static bool WRITE = false;
+        WirteNames Names;
         public Vector2 pos;
         public static string CLICK;
+        public static bool Cliket;
         public SpriteRender spriteRender { get; private set; }
         public Rectangle ColisionBox
         {
@@ -34,7 +33,6 @@ namespace DatabaseProjekt.GameObjects
                 );
             }
         }
-        public Rectangle thisrectangle;
         public enum state
         {
             none,
@@ -48,28 +46,27 @@ namespace DatabaseProjekt.GameObjects
             get { return _state; }
             set { _state = value; }
         }
-       
-        public StarteButton()
+
+        public WriteName1()
         {
+            Names = new WirteNames();
             pos = new Vector2(GameWorld.Worldzice.X / 2, GameWorld.Worldzice.Y / 2);
-           // thisrectangle = ColisionBox;
         }
-        public StarteButton(Vector2 Position){
-          
+        public WriteName1(Vector2 Position)
+        {
+            Names = new WirteNames();
             this.pos = Position;
         }
         public override void Attach(GameObject gameObject)
         {
-            spriteRender = (SpriteRender)gameObject.FindCompent("SpriteRender");
             base.Attach(gameObject);
             gameObject.transForm.positon = pos;
-            
+
         }
         public override void Update(GameTime gameTime)
         {
-          
+            spriteRender = (SpriteRender)gameObject.FindCompent("SpriteRender");
             MouseState mouse = Mouse.GetState();
-            thisrectangle = ColisionBox;
             ///checks om musen er inden for knappends område og om der bliver 
             ///clickt elelr hovert
             if (ColisionBox.Contains(mouse.X, mouse.Y))
@@ -80,58 +77,53 @@ namespace DatabaseProjekt.GameObjects
                 }
                 if (mouse.LeftButton == ButtonState.Released)
                 {
-                 State = state.Hover;
-                }                 
+                    State = state.Hover;
+                }
             }
             else
             {
                 State = state.none;
             }
-/// maybe losning
-            switch (spriteRender.spriteName)
+            /// maybe losning
+
+
+            switch (State)
             {
-                case "StartKnap":
-                    switch (State)
-                    {
-                        case state.none:
-                            CLICK = "non";
-                            // do somthing 
-                            break;
-                        case state.Pressed:
-                            CLICK = "pressed";
-                            // do SOmthing
-                            break;
-                        case state.Hover:
-                            CLICK = "Hover";
-                            /// do somthing
-                            break;
-                        default:
-                            break;
-                    }
+                case state.none:
+                    CLICK = "non";
+                    // do somthing 
+                    break;
+                case state.Pressed:
+                    CLICK = "pressed";
+
+                    WRITE = true;
+                    break;
+                case state.Hover:
+                    CLICK = "Hover";
+                    /// do somthing
                     break;
                 default:
                     break;
             }
 
-            //switch (State)
-            //{
-            //    case state.none:
-            //        CLICK = "non";
-            //        // do somthing 
-            //        break;
-            //    case state.Pressed:
-            //        CLICK = "pressed";
-            //        // do SOmthing
-            //        break;
-            //    case state.Hover:
-            //        CLICK = "Hover";
-            //        /// somthing
-            //        break;
-            //    default:
-            //        break;
-            //}
+            if(WRITE == true)
+            {
+
+             
+                if (Keyboard.GetState().IsKeyDown(Keys.Enter))
+
+                {
+                    Names.Write_name1(gameTime);
+                    WRITE = false;
+                }
+            }
+
+         
+
+
 
             base.Update(gameTime);
         }
+        
     }
 }

@@ -45,8 +45,11 @@
   <ItemGroup>
     <Compile Include="Model\CampsiteModel.cs" />
     <Compile Include="Controller\CampsiteController.cs" />
+    <Compile Include="Buttons\WriteName1.cs" />
+    <Compile Include="Buttons\Writename2.cs" />
+    <Compile Include="WirteNames.cs" />
     <Compile Include="Factorys\ObejteFactory.cs" />
-    <Compile Include="GameObjects\StarteButton.cs" />
+    <Compile Include="Buttons\StarteButtonen.cs" />
     <Compile Include="Componets\Componet.cs" />
     <Compile Include="GameStates\IntermediateState.cs" />
     <Compile Include="GameStates\IState.cs" />
@@ -54,6 +57,7 @@
     <Compile Include="GameStates\PlayerOneTurnState.cs" />
     <Compile Include="GameStates\PlayerTwoTurnState.cs" />
     <Compile Include="GameStates\WinGameState.cs" />
+    <Compile Include="Buttons\ExitButton.cs" />
     <Compile Include="GameWorld.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="GameObjects\Curser.cs" />

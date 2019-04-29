@@ -17,8 +17,25 @@ namespace DatabaseProjekt
         static GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+
         private static SQLiteConnection connection;
         SpriteFont font;
+
+
+        WirteNames wirteNames;
+        private static GameWorld instance;
+        public static GameWorld Instance
+        {
+            get
+            {
+                if(instance == null)
+                {
+                    instance = new GameWorld();
+                }
+                return instance;
+            }
+
+        }
 
         public static bool Cheakbool;
         public  static Vector2 Worldzice;
@@ -37,7 +54,7 @@ namespace DatabaseProjekt
             }
         }
         static public  List<GameObject> gameObjects { get; set; } = new List<GameObject>();
-      public List<GameObject> Remove { get; set; } = new List<GameObject>();
+       static  public List<GameObject> Remove { get; set; } = new List<GameObject>();
         public List<GameObject> addGameObejts { get; set; } = new List<GameObject>();
 
 
@@ -84,8 +101,9 @@ namespace DatabaseProjekt
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here'
-            
+            wirteNames = new WirteNames();
             this.IsMouseVisible = true;
+
 
             /// setting world zise to vector2
             Worldzice = new Vector2(GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
@@ -97,6 +115,10 @@ namespace DatabaseProjekt
             
             gameObjects.Add(ObejteFactory.Insteance.Create("StartKnap", new Vector2(400, 200)) );
             gameObjects.Add(ObejteFactory.Insteance.Create("StartKnap", new Vector2(200, 200) ));
+
+        
+
+
             base.Initialize();
         }
 
@@ -114,6 +136,17 @@ namespace DatabaseProjekt
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             font = Content.Load<SpriteFont>("font");
+
+
+
+            // adding curser to GameObejtes
+            //  curser = ObejteFactory.Insteance.Create("Curser");
+            wirteNames.loadContent(Content);
+            gameObjects.Add(ObejteFactory.Insteance.Create("Curser"));
+            gameObjects.Add(ObejteFactory.Insteance.Create("StartKnap"));
+            gameObjects.Add(ObejteFactory.Insteance.Create("ExitKnap"));
+            gameObjects.Add(ObejteFactory.Insteance.Create("writenameher"));
+            gameObjects.Add(ObejteFactory.Insteance.Create("writenameher2"));
 
             //   curser.LoadContent(Content);
 
@@ -136,22 +169,24 @@ namespace DatabaseProjekt
         {
             // TODO: Unload any non ContentManager content here
         }
-        
+
         /// <summary>
         /// Allows the game to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         /// 
+        public static bool ExitGame  =false;
 
-            
 
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
 
-          
+                Exit();
+            if (ExitGame) { Quit(); };
+
+
             foreach (var go in gameObjects)
             {
                 go.Update(gameTime);
@@ -162,13 +197,17 @@ namespace DatabaseProjekt
                 gameObjects.Remove(go);
             }
             Remove.Clear();
-            //adding GameObejt
-            foreach (var go in addGameObejts)
-            {
-                gameObjects.Add(go);
-            }
+            ////adding GameObejt
+            //foreach (var go in addGameObejts)
+            //{
+            //    gameObjects.Add(go);
+            //}
 
-            addGameObejts.Clear();
+            //addGameObejts.Clear();
+
+
+
+            // TODO: Add your update logic here
 
 
             // Update currentState
@@ -177,6 +216,12 @@ namespace DatabaseProjekt
             base.Update(gameTime);
         }
 
+
+        public void Quit()
+        {
+            this.Exit();
+            
+      }
         /// <summary>
         /// This is called when the game should draw itself.
         /// </summary>
@@ -191,15 +236,23 @@ namespace DatabaseProjekt
             spriteBatch.Begin();
 
 
-            //draws gameObejts
+          // draws gameObejts 
+
             foreach (var go in gameObjects)
             {
                 go.Draw(spriteBatch);
             }
 
+
             spriteBatch.DrawString(font, $"Player Position: check col: {StarteButton.CLICK}", new Vector2(300, 5), Color.Red);
 
             //currentState.Draw(spriteBatch);
+
+            wirteNames.Draw(spriteBatch);
+            spriteBatch.DrawString(font, $"mouse Positio check col: {Button.CLICK} and {Button2.CLICK}" , new Vector2(300, 5), Color.Red);
+
+          
+
             spriteBatch.End();
 
             base.Draw(gameTime);
