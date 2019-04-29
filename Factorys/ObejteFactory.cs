@@ -46,16 +46,26 @@ namespace DatabaseProjekt.Factorys
                    go.addComponet(new SpriteRender(type));
                               
                    break;
-                case "StartKnap":                   
-                    go.addComponet(new SpriteRender(type));                    
-                    go.addComponet(new Button(new Vector2(640,240)));
+                case "StartKnap":
+                    go.addComponet(new SpriteRender(type));
+                    go.addComponet(new Button(new Vector2(640, 240)));
                     break;
                 case "ExitKnap":
                     go.addComponet(new SpriteRender(type));
-                    go.addComponet(new Button(new Vector2(640,460)));
+                    go.addComponet(new Button2(new Vector2(640,460)));
+                    break;
+                 case "writenameher":
+                    go.addComponet(new SpriteRender("writenameher"));
+                    go.addComponet(new WriteName1(new Vector2(200, 200)));
+                    break;
+                case "writenameher2":
+                    go.addComponet(new SpriteRender("writenameher"));
+                    go.addComponet(new Writename2(new Vector2(200, 400)));
                     break;
 
-            default:
+
+
+                default:
                     break;
             }
 

@@ -41,9 +41,13 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Buttons\WriteName1.cs" />
+    <Compile Include="Buttons\Writename2.cs" />
+    <Compile Include="WirteNames.cs" />
     <Compile Include="Factorys\ObejteFactory.cs" />
-    <Compile Include="GameObjects\Button.cs" />
+    <Compile Include="Buttons\StarteButtonen.cs" />
     <Compile Include="Componets\Componet.cs" />
+    <Compile Include="Buttons\ExitButton.cs" />
     <Compile Include="GameWorld.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="GameObjects\Curser.cs" />
