@@ -18,7 +18,7 @@ namespace DatabaseProjekt
         //private static GameWorld instance;
         static GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        
+        private static SQLiteConnection connection;
         SpriteFont font;
         
         public static bool Cheakbool;
@@ -26,7 +26,17 @@ namespace DatabaseProjekt
 
         //Gem database her maaske?
         const string CONNECTIONSTRING = @"Data Source=camping.db;version=3;New=true;Compress=true";
-        public static SQLiteConnection connection;
+        public static SQLiteConnection Connection
+        {
+            get
+            {
+                if(connection == null)
+                {
+                    connection = new SQLiteConnection(CONNECTIONSTRING);
+                }
+                return connection;
+            }
+        }
         static public  List<GameObject> gameObjects { get; set; } = new List<GameObject>();
       public List<GameObject> Remove { get; set; } = new List<GameObject>();
         public List<GameObject> addGameObejts { get; set; } = new List<GameObject>();
@@ -56,8 +66,8 @@ namespace DatabaseProjekt
         public GameWorld()
         {
             //database skal vaere her
-            connection = new SQLiteConnection(CONNECTIONSTRING);
-            connection.Open();
+            
+            Connection.Open();
 
             Content = Content;
             graphics = new GraphicsDeviceManager(this);
