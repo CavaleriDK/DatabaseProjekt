@@ -38,18 +38,25 @@ namespace DatabaseProjekt
             command.ExecuteNonQuery();
         }
 
-        public void UpdateTentPrice()
+        public void UpdateTentPrice(int newPrice)
         {
-
+            priceOfTent = newPrice;
+            // update campsitemodel (tent_price) WHERE id = this.id
+            cmd.CommandText = "UPDATE campsitemodel SET priceoftent = " + this.priceOfTent + "WHERE id =" + this.id;
+            cmd.ExecuteNonQuery();
         }
 
-        public void UpdateCaravanPrice()
+        public void UpdateCaravanPrice(int newPrice)
         {
-
+            priceOfCaravan = newPrice;
+            // update campsitemodel (tent_price) WHERE id = this.id
+            cmd.CommandText = "UPDATE campsitemodel SET priceofcaravan = " + this.priceOfCaravan + "WHERE id =" + this.id;
+            cmd.ExecuteNonQuery();
         }
 
-        public void TotalIncome()
+        public void TotalIncome(int earnings)
         {
+            // INCREAMENT // UPDATE (total_income) VALUES(total_ WHERE id = this.id
 
         }
     }
