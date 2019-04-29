@@ -56,8 +56,10 @@ namespace DatabaseProjekt
 
         public void TotalIncome(int earnings)
         {
+            totalIncome += earnings;
             // INCREAMENT // UPDATE (total_income) VALUES(total_ WHERE id = this.id
-
+            cmd.CommandText = "UPDATE campsitemodel SET totalincome = " + this.totalIncome + "WHERE id =" + this.id;
+            cmd.ExecuteNonQuery();
         }
     }
 }
