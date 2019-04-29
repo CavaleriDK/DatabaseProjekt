@@ -49,6 +49,7 @@ namespace DatabaseProjekt.Factorys
                 case "StartKnap":
                     go.addComponet(new SpriteRender(type));
                     go.addComponet(new Button(new Vector2(640, 240)));
+
                     break;
                 case "ExitKnap":
                     go.addComponet(new SpriteRender(type));

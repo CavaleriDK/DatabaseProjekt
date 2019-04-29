@@ -109,11 +109,11 @@ namespace DatabaseProjekt.GameObjects
             if(WRITE == true)
             {
 
-             
+                Names.Write_name1(gameTime);
                 if (Keyboard.GetState().IsKeyDown(Keys.Enter))
 
                 {
-                    Names.Write_name1(gameTime);
+                    
                     WRITE = false;
                 }
             }

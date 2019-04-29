@@ -15,7 +15,7 @@ namespace DatabaseProjekt.GameObjects
     {
 
         public static string Player1, Player2;
-
+        char bogstav;
         public bool Don =false;
       
         SpriteFont Player1Name;
@@ -39,21 +39,35 @@ namespace DatabaseProjekt.GameObjects
 
         }
             
+
+
+        public char Writebogstav()
+        {
+            //Keys key;
+
+           
+            //switch (key.)
+            //{
+            //    case :
+            //       Player1 = "feesfsefsea";
+                    
+            //        break;
+               
+            //    default:
+            //        break;
+            //}
+            return bogstav;
+        }
+
         public void Write_name1(GameTime gameTime)
         {
 
-                Keys[] key = Keyboard.GetState().GetPressedKeys();
-            //StringBuilder sb = new StringBuilder();
-            //sb.Append(key.ToString());
+            Writebogstav(Keyboar);
 
-
-            Player1 = key.ToString();
-              
-          
-    
-
-          //  Player1 = "fiojsodjf";
+           // Player1 = "fiojsodjf";
         }
+
+
 
         public void Write_Name2()
         {

@@ -45,7 +45,7 @@
     <Compile Include="Buttons\Writename2.cs" />
     <Compile Include="WirteNames.cs" />
     <Compile Include="Factorys\ObejteFactory.cs" />
-    <Compile Include="Buttons\StarteButtonen.cs" />
+    <Compile Include="Buttons\StarteButtone.cs" />
     <Compile Include="Componets\Componet.cs" />
     <Compile Include="Buttons\ExitButton.cs" />
     <Compile Include="GameWorld.cs" />

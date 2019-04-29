@@ -77,14 +77,17 @@ namespace DatabaseProjekt
         /// This is where it can query for any required services and load any non-graphic
         /// related content.  Calling base.Initialize will enumerate through any components
         /// and initialize them as well.
-        /// </summary>
+        /// </summary>'
+
+
+       
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here'
             wirteNames = new WirteNames();
             this.IsMouseVisible = true;
+           
 
-         
             /// setting world zise to vector2
             Worldzice = new Vector2(GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
 
