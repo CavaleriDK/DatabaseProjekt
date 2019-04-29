@@ -62,7 +62,7 @@ namespace DatabaseProjekt.GameObjects
         public void Write_name1(GameTime gameTime)
         {
 
-            Writebogstav(Keyboar);
+           // Writebogstav(Keyboar);
 
            // Player1 = "fiojsodjf";
         }
