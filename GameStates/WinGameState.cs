@@ -12,21 +12,21 @@ namespace DatabaseProjekt.GameState
     {
         public void Draw(SpriteBatch spriteBatch)
         {
-            throw new NotImplementedException();
+            //draw WinGameState
         }
 
         public void EnterState()
         {
-            throw new NotImplementedException();
+            //det som skal ske før WinGameState påbegyndes
         }
 
         public void ExitState()
         {
-            throw new NotImplementedException();
+            //det som skal ske før WinGameState afsluttes
         }
         public void Update(GameTime gameTime)
         {
-            throw new NotImplementedException();
+            //update for WinGameState
         }
     }
 }

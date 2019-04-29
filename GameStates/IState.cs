@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseProjekt.GameState
 {
-    interface IState
+    public interface IState
     {
         void EnterState();
         void ExitState();

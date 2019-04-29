@@ -1,33 +1,33 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace DatabaseProjekt.GameState
 {
-    class IntermediateState : IState
+    class PlayerTwoTurnState : IState
     {
         public void Draw(SpriteBatch spriteBatch)
         {
-            throw new NotImplementedException();
+            //draw PlayTwoTurnState
         }
 
         public void EnterState()
         {
-            throw new NotImplementedException();
+            //logik for det som skal ske før PlayerTwoTurnState påbegyndes
         }
 
         public void ExitState()
         {
-            throw new NotImplementedException();
+            //logik for det som skal ske før afslutning af PlayerTwoTurnState
         }
 
         public void Update(GameTime gameTime)
         {
-            throw new NotImplementedException();
+            //update for PlayerTwoTurnState
         }
     }
 }

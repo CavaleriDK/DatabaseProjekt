@@ -11,7 +11,7 @@ namespace DatabaseProjekt
 {
     public class GameWorld : Game
     {
-      
+        private IState currentState;
         //private static GameWorld instance;
         static GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -149,9 +149,10 @@ namespace DatabaseProjekt
 
             addGameObejts.Clear();
 
-           
-            // TODO: Add your update logic here
 
+            // Update currentState
+            //currentState.Update(gameTime);
+            // TODO: Add your update logic here
             base.Update(gameTime);
         }
 
@@ -165,24 +166,35 @@ namespace DatabaseProjekt
 
             // TODO: Add your drawing code here
 
-            
+
             spriteBatch.Begin();
 
-      
-          // draws gameObejts
+
+            //draws gameObejts
             foreach (var go in gameObjects)
             {
                 go.Draw(spriteBatch);
             }
 
+            spriteBatch.DrawString(font, $"Player Position: check col: {StarteButton.CLICK}", new Vector2(300, 5), Color.Red);
 
-            spriteBatch.DrawString(font, $"Player Position: check col: {StarteButton.CLICK}" , new Vector2(300, 5), Color.Red);
 
-          
-
+            //currentState.Draw(spriteBatch);
             spriteBatch.End();
 
             base.Draw(gameTime);
         }
+        public void ChangeState(IState NewState)
+        {
+            if(currentState != null)
+            {
+                currentState.ExitState();
+            }
+
+            currentState = NewState;
+            NewState.EnterState();
+
+        }
+
     }
 }

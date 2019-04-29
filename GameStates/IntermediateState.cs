@@ -8,26 +8,26 @@ using System.Threading.Tasks;
 
 namespace DatabaseProjekt.GameState
 {
-    class MainMenuScreenState : IState
+    class IntermediateState : IState
     {
-        public void Draw(SpriteBatch spritebatch)
+        public void Draw(SpriteBatch spriteBatch)
         {
-            throw new NotImplementedException();
+            //draw IntermediateState
         }
 
         public void EnterState()
         {
-            throw new NotImplementedException();
+            //logik for det som skal ske før IntermediateState påbegyndes
         }
 
         public void ExitState()
         {
-            throw new NotImplementedException();
+            //logik for det skal skal ske før IntermediateState afsluttes
         }
 
         public void Update(GameTime gameTime)
         {
-            throw new NotImplementedException();
+            //update for IntermediateState
         }
     }
 }

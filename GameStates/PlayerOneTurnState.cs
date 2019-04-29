@@ -8,26 +8,26 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace DatabaseProjekt.GameState
 {
-    class PlayerTwoTurnState : IState
+    class PlayerOneTurnState : IState
     {
         public void Draw(SpriteBatch spriteBatch)
         {
-            throw new NotImplementedException();
+            //draw PlayerOneTurnState
         }
 
         public void EnterState()
         {
-            throw new NotImplementedException();
+            //logik for det som skal ske før PlayerOneTurnState påbegyndes
         }
 
         public void ExitState()
         {
-            throw new NotImplementedException();
+            //logik for det som skal ske før afslutning af PlayerOneTurnState
         }
 
         public void Update(GameTime gameTime)
         {
-            throw new NotImplementedException();
+            //update for PlayerOneTurnState
         }
     }
 }
