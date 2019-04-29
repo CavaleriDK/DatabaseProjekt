@@ -20,8 +20,6 @@ namespace DatabaseProjekt
         private static SQLiteConnection connection;
         SpriteFont font;
 
-
-
         public static bool Cheakbool;
         public  static Vector2 Worldzice;
 
@@ -94,10 +92,12 @@ namespace DatabaseProjekt
 
             // adding curser to GameObejtes
           //  curser = ObejteFactory.Insteance.Create("Curser");
-            gameObjects.Add(ObejteFactory.Insteance.Create("Curser"));
+          //  gameObjects.Add(ObejteFactory.Insteance.Create("Curser"));
             gameObjects.Add(ObejteFactory.Insteance.Create("StartKnap"));
-                
-               base.Initialize();
+            
+            gameObjects.Add(ObejteFactory.Insteance.Create("StartKnap", new Vector2(400, 200)) );
+            gameObjects.Add(ObejteFactory.Insteance.Create("StartKnap", new Vector2(200, 200) ));
+            base.Initialize();
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace DatabaseProjekt
             spriteBatch = new SpriteBatch(GraphicsDevice);
             font = Content.Load<SpriteFont>("font");
 
-         //   curser.LoadContent(Content);
+            //   curser.LoadContent(Content);
 
             foreach (var go in gameObjects)
             {
@@ -145,13 +145,13 @@ namespace DatabaseProjekt
         /// 
 
             
-        MouseState mouseState;
+
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-         
+          
             foreach (var go in gameObjects)
             {
                 go.Update(gameTime);
@@ -198,7 +198,6 @@ namespace DatabaseProjekt
             }
 
             spriteBatch.DrawString(font, $"Player Position: check col: {StarteButton.CLICK}", new Vector2(300, 5), Color.Red);
-
 
             //currentState.Draw(spriteBatch);
             spriteBatch.End();
