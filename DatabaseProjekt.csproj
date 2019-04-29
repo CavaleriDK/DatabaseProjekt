@@ -48,6 +48,12 @@
     <Compile Include="Factorys\ObejteFactory.cs" />
     <Compile Include="GameObjects\StarteButton.cs" />
     <Compile Include="Componets\Componet.cs" />
+    <Compile Include="GameStates\IntermediateState.cs" />
+    <Compile Include="GameStates\IState.cs" />
+    <Compile Include="GameStates\MainMenuScreenState.cs" />
+    <Compile Include="GameStates\PlayerOneTurnState.cs" />
+    <Compile Include="GameStates\PlayerTwoTurnState.cs" />
+    <Compile Include="GameStates\WinGameState.cs" />
     <Compile Include="GameWorld.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="GameObjects\Curser.cs" />
