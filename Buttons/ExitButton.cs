@@ -11,7 +11,7 @@ using DatabaseProjekt.Componets;
 
 namespace DatabaseProjekt.GameObjects
 {
-    class Button2 : Componet
+    class ExitButton : Componet
     {
 
         public Vector2 pos;
@@ -45,11 +45,11 @@ namespace DatabaseProjekt.GameObjects
             set { _state = value; }
         }
 
-        public Button2()
+        public ExitButton()
         {
             pos = new Vector2(GameWorld.Worldzice.X / 2, GameWorld.Worldzice.Y / 2);
         }
-        public Button2(Vector2 Position)
+        public ExitButton(Vector2 Position)
         {
             this.pos = Position;
         }

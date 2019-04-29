@@ -13,7 +13,7 @@ using DatabaseProjekt.Componets;
 
 namespace DatabaseProjekt.GameObjects
 {
-    class Button : Componet
+    class StarteButtone : Componet
     {
 
    
@@ -49,11 +49,11 @@ namespace DatabaseProjekt.GameObjects
             set { _state = value; }
         }
        
-        public Button()
+        public StarteButtone()
         {
             pos = new Vector2(GameWorld.Worldzice.X / 2, GameWorld.Worldzice.Y / 2);
         }
-        public Button(Vector2 Position){
+        public StarteButtone(Vector2 Position){
             this.pos = Position;
         }
         public override void Attach(GameObject gameObject)
