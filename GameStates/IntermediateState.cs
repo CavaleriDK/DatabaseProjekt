@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,11 @@ namespace DatabaseProjekt.GameState
         public void ExitState()
         {
             //logik for det skal skal ske før IntermediateState afsluttes
+        }
+
+        public void load(ContentManager content)
+        {
+            throw new NotImplementedException();
         }
 
         public void Update(GameTime gameTime)
