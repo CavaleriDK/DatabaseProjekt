@@ -11,6 +11,19 @@ namespace DatabaseProjekt.GameState
 {
     class PlayerTwoTurnState : IState
     {
+        private static PlayerTwoTurnState instance;
+
+        public static PlayerTwoTurnState Instance
+        {
+            get
+            {
+                if(instance == null)
+                {
+                    instance = new PlayerTwoTurnState();
+                }
+                return instance;
+            }
+        }
         public void Draw(SpriteBatch spriteBatch)
         {
             //draw PlayTwoTurnState

@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DatabaseProjekt.GameState;
 
 namespace DatabaseProjekt
 {
     class CampsiteController
     {
         List<UnitTypeModel> units = new List<UnitTypeModel>();
-
+        
         //properties til player 1 og 2 og unit listen
         string playerName;
         int campsiteCount;
@@ -209,11 +210,11 @@ namespace DatabaseProjekt
             */
             if(isPlayerOne == true)
             {
-                //GameWorld.ChangeState(PlayerTwoState.Instance);
+                GameWorld.ChangeState(PlayerTwoTurnState.Instance);
             }
             else
             {
-                //GameWorld.ChangeState(PlayerOneState.Instance);
+                GameWorld.ChangeState(PlayerOneTurnState.InsPlayerOne);
             }
         }
     }
