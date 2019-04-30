@@ -8,7 +8,8 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using DatabaseProjekt.Componets;
-
+using DatabaseProjekt.Factorys;
+using DatabaseProjekt.GameState;
 namespace DatabaseProjekt.GameObjects
 {
     class WirteNames
@@ -36,9 +37,10 @@ namespace DatabaseProjekt.GameObjects
 
         public void loadContent(ContentManager content)
         {
-            Player1Name = content.Load<SpriteFont>("Player_1");
-
-            Player2Name = content.Load<SpriteFont>("Player_2");
+           
+            //Player1Name = content.Load<SpriteFont>("Player_1");
+            //GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create()
+            //Player2Name = content.Load<SpriteFont>("Player_2");
 
 
         }

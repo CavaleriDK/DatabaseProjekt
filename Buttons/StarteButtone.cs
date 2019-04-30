@@ -105,6 +105,7 @@ namespace DatabaseProjekt.GameObjects
 
                         GameWorld.Remove.Add(go);
                     }
+
                     Cliket = true;
                     break;
                 case state.Hover:

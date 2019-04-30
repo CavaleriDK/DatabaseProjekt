@@ -12,7 +12,7 @@ namespace DatabaseProjekt
 {
     public class GameWorld : Game
     {
-        private IState currentState;
+     private static IState currentState;
         //private static GameWorld instance;
         static GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -234,7 +234,9 @@ namespace DatabaseProjekt
 
             base.Draw(gameTime);
         }
-        public void ChangeState(IState NewState)
+
+        
+        static void ChangeState(IState NewState)
         {
             if(currentState != null)
             {

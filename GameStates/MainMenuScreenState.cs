@@ -33,14 +33,10 @@ namespace DatabaseProjekt.GameState
         
         public void Draw(SpriteBatch spritebatch)
         {
-
-
-
             foreach (var go in GameWorld.gameObjects)
             {
                 go.Draw(spritebatch);
-            }
-          
+            }        
         }
 
 
