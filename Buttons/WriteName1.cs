@@ -92,14 +92,18 @@ namespace DatabaseProjekt.GameObjects
                 case state.none:
                     CLICK = "non";
                     // do somthing 
+                    spriteRender.color = Color.White;
+                    gameObject.transForm.size = 1;
                     break;
                 case state.Pressed:
                     CLICK = "pressed";
-
+                    spriteRender.color = Color.Gray;
                     WRITE = true;
                     break;
                 case state.Hover:
                     CLICK = "Hover";
+                    spriteRender.color = Color.Salmon;
+                    gameObject.transForm.size = 1.5f;
                     /// do somthing
                     break;
                 default:
