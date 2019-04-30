@@ -68,6 +68,8 @@ namespace DatabaseProjekt.GameObjects
             MouseState mouse = Mouse.GetState();             
             ///checks om musen er inden for knappends område og om der bliver 
             ///clickt elelr hovert
+            ///
+            
             if (ColisionBox.Contains(mouse.X, mouse.Y))
             {
                 if (mouse.LeftButton == ButtonState.Pressed)

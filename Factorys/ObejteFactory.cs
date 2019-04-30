@@ -101,7 +101,7 @@ namespace DatabaseProjekt.Factorys
                     break;
                 case "StartKnap":
                     go.addComponet(new SpriteRender(type));
-                    go.addComponet(new StarteButton(Position));
+                    go.addComponet(new StarteButtone(Position));
                     
 
                     break;
@@ -131,7 +131,7 @@ namespace DatabaseProjekt.Factorys
                     break;
                 case "StartKnap":
                     go.addComponet(new SpriteRender(type));
-                    go.addComponet(new StarteButton());
+                    go.addComponet(new StarteButtone());
                  
                     go.LoadContent(content);
                     break;

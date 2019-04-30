@@ -7,24 +7,64 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DatabaseProjekt.GameObjects;
+using DatabaseProjekt.Factorys;
+using Microsoft.Xna.Framework.Content;
 
 namespace DatabaseProjekt.GameState
 {
     class MainMenuScreenState : IState
     {
+
+
+
+
+
+        private static MainMenuScreenState instance;
+        public static MainMenuScreenState Instance
+        {
+            get
+            {
+                if( instance== null) {
+                    instance = new MainMenuScreenState();
+                }
+                return instance;
+            }
+        }
+        
         public void Draw(SpriteBatch spritebatch)
         {
-            //draw MainMenuScreenState
+
+
+
+            foreach (var go in GameWorld.gameObjects)
+            {
+                go.Draw(spritebatch);
+            }
+          
         }
+
+
 
         public void EnterState()
         {
+           
+         // GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("Curser"));
+          GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("StartKnap"));
+          GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("ExitKnap"));
             //det som skal ske før MainMenuScreenState påbegyndes
         }
 
         public void ExitState()
         {
+
+          
+         
             //det som skal ske før MainMenuScreenState afsluttes 
+        }
+
+        public void load(ContentManager content)
+        {
+            throw new NotImplementedException();
         }
 
         public void Update(GameTime gameTime)
