@@ -49,8 +49,7 @@ namespace DatabaseProjekt.GameState
         {
            
          // GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("Curser"));
-          GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("StartKnap"));
-          GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("ExitKnap"));
+         
             //det som skal ske før MainMenuScreenState påbegyndes
         }
 
@@ -64,7 +63,9 @@ namespace DatabaseProjekt.GameState
 
         public void load(ContentManager content)
         {
-            throw new NotImplementedException();
+            GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("StartKnap",content));
+            GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("ExitKnap",content));
+           
         }
 
         public void Update(GameTime gameTime)

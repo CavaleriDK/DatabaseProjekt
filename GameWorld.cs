@@ -21,7 +21,7 @@ namespace DatabaseProjekt
         private static SQLiteConnection connection;
         SpriteFont font;
 
-        MainMenuScreenState mainMenu;
+        
         WirteNames wirteNames;
         private static GameWorld instance;
         public static GameWorld Instance
@@ -110,8 +110,8 @@ namespace DatabaseProjekt
             /// setting world zise to vector2
             Worldzice = new Vector2(GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
 
-
-            mainMenu = new MainMenuScreenState();
+            ChangeState(MainMenuScreenState.Instance);
+            
 
             base.Initialize();
         }
@@ -130,23 +130,15 @@ namespace DatabaseProjekt
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             font = Content.Load<SpriteFont>("font");
-            
 
-            // adding curser to GameObejtes
-            //  curser = ObejteFactory.Insteance.Create("Curser");
-            wirteNames.loadContent(Content);
-            mainMenu.EnterState();
-            //gameObjects.Add(ObejteFactory.Insteance.Create("writenameher"));
-            //gameObjects.Add(ObejteFactory.Insteance.Create("writenameher2"));
-
-            //   curser.LoadContent(Content);
+            MainMenuScreenState.Instance.load(Content);
 
             foreach (var go in gameObjects)
             {
                 go.LoadContent(Content);
             }
 
-
+            currentState.load(Content);
            // startScreen = new StartScreen();
            /// startScreen.LoadStartScreen(Content);
             // TODO: use this.Content to load your game content here
@@ -188,6 +180,7 @@ namespace DatabaseProjekt
                 gameObjects.Remove(go);
             }
             Remove.Clear();
+            currentState.Update(gameTime);
             ////adding GameObejt
             //foreach (var go in addGameObejts)
             //{
@@ -228,12 +221,15 @@ namespace DatabaseProjekt
             {
                 go.Draw(spriteBatch);
             }
-            
-            wirteNames.Draw(spriteBatch);
+
+
+            currentState.Draw(spriteBatch);
+
+           
             spriteBatch.DrawString(font, $"mouse Positio check col: {StarteButtone.CLICK} and {ExitButton.CLICK}" , new Vector2(300, 5), Color.Red);
 
 
-            mainMenu.Draw(spriteBatch);
+           
             spriteBatch.End();
 
             base.Draw(gameTime);
@@ -247,6 +243,9 @@ namespace DatabaseProjekt
 
             currentState = NewState;
             NewState.EnterState();
+        
+            
+
 
         }
 
