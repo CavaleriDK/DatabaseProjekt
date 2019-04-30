@@ -31,6 +31,7 @@ namespace DatabaseProjekt.GameObjects
                 );
             }
         }
+        public Rectangle thisrectangle;
         public enum state
         {
             none,
@@ -48,13 +49,17 @@ namespace DatabaseProjekt.GameObjects
         public ExitButton()
         {
             pos = new Vector2(GameWorld.Worldzice.X / 2, GameWorld.Worldzice.Y / 2);
+           // thisrectangle = ColisionBox;
         }
+
         public ExitButton(Vector2 Position)
         {
+
             this.pos = Position;
         }
         public override void Attach(GameObject gameObject)
         {
+            spriteRender = (SpriteRender)gameObject.FindCompent("SpriteRender");
             base.Attach(gameObject);
             gameObject.transForm.positon = pos;
 
@@ -63,10 +68,15 @@ namespace DatabaseProjekt.GameObjects
         {
           
 
-            spriteRender = (SpriteRender)gameObject.FindCompent("SpriteRender");
             MouseState mouse = Mouse.GetState();
+            thisrectangle = ColisionBox;
+
+
+            spriteRender = (SpriteRender)gameObject.FindCompent("SpriteRender");
+
             MousePosition.X = mouse.X;
             MousePosition.Y = mouse.Y;
+
             ///checks om musen er inden for knappends område og om der bliver 
             ///clickt elelr hovert
            

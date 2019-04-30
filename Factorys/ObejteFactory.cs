@@ -48,7 +48,10 @@ namespace DatabaseProjekt.Factorys
                    break;
                 case "StartKnap":
                     go.addComponet(new SpriteRender(type));
+
                     go.addComponet(new StarteButtone(new Vector2(640, 240)));
+
+
 
                     break;
                 case "ExitKnap":
@@ -79,17 +82,65 @@ namespace DatabaseProjekt.Factorys
 
         public override GameObject Create(string type, ContentManager content)
         {
+
+
             throw new NotImplementedException();
         }
 
         public override GameObject Create(string type, Vector2 Position)
         {
-            throw new NotImplementedException();
+
+            GameObject go = new GameObject();
+            switch (type)
+            {
+                case "Curser":
+                    go.addComponet(new Curser());
+                    go.addComponet(new SpriteRender(type));
+
+
+                    break;
+                case "StartKnap":
+                    go.addComponet(new SpriteRender(type));
+                    go.addComponet(new StarteButton(Position));
+                    
+
+                    break;
+
+                default:
+                    break;
+            }
+
+
+
+            return go;
+
+           
         }
 
         public override GameObject Create(string type, Vector2 Position, ContentManager content)
         {
-            throw new NotImplementedException();
+
+            GameObject go = new GameObject();
+            switch (type)
+            {
+                case "Curser":
+                    go.addComponet(new Curser());
+                    go.addComponet(new SpriteRender(type));
+
+
+                    break;
+                case "StartKnap":
+                    go.addComponet(new SpriteRender(type));
+                    go.addComponet(new StarteButton());
+                 
+                    go.LoadContent(content);
+                    break;
+
+                default:
+                    break;
+            }
+            return go;
+        
         }
 
         public override GameObject[] Creates(string type)

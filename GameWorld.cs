@@ -5,20 +5,24 @@ using System.Collections.Generic;
 using DatabaseProjekt.Componets;
 using DatabaseProjekt.GameObjects;
 using DatabaseProjekt.Factorys;
+using System.Data.SQLite;
+using DatabaseProjekt.GameState;
 
 namespace DatabaseProjekt
 {
-    /// <summary>
-    /// This is the main type for your game.
-    /// </summary>
     public class GameWorld : Game
     {
-
+        private IState currentState;
         //private static GameWorld instance;
-       static GraphicsDeviceManager graphics;
+        static GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        WirteNames wirteNames;
+
+
+        private static SQLiteConnection connection;
         SpriteFont font;
+
+
+        WirteNames wirteNames;
         private static GameWorld instance;
         public static GameWorld Instance
         {
@@ -32,10 +36,23 @@ namespace DatabaseProjekt
             }
 
         }
+
         public static bool Cheakbool;
         public  static Vector2 Worldzice;
 
-      
+        //Gem database her maaske?
+        const string CONNECTIONSTRING = @"Data Source=camping.db;version=3;New=true;Compress=true";
+        public static SQLiteConnection Connection
+        {
+            get
+            {
+                if(connection == null)
+                {
+                    connection = new SQLiteConnection(CONNECTIONSTRING);
+                }
+                return connection;
+            }
+        }
         static public  List<GameObject> gameObjects { get; set; } = new List<GameObject>();
        static  public List<GameObject> Remove { get; set; } = new List<GameObject>();
         public List<GameObject> addGameObejts { get; set; } = new List<GameObject>();
@@ -64,6 +81,9 @@ namespace DatabaseProjekt
         /// </summary>
         public GameWorld()
         {
+            //database skal vaere her
+            
+            Connection.Open();
 
             Content = Content;
             graphics = new GraphicsDeviceManager(this);
@@ -86,10 +106,20 @@ namespace DatabaseProjekt
             // TODO: Add your initialization logic here'
             wirteNames = new WirteNames();
             this.IsMouseVisible = true;
-           
 
             /// setting world zise to vector2
             Worldzice = new Vector2(GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
+
+            // adding curser to GameObejtes
+          //  curser = ObejteFactory.Insteance.Create("Curser");
+          //  gameObjects.Add(ObejteFactory.Insteance.Create("Curser"));
+            gameObjects.Add(ObejteFactory.Insteance.Create("StartKnap"));
+            
+            gameObjects.Add(ObejteFactory.Insteance.Create("StartKnap", new Vector2(400, 200)) );
+            gameObjects.Add(ObejteFactory.Insteance.Create("StartKnap", new Vector2(200, 200) ));
+
+        
+
 
             base.Initialize();
         }
@@ -108,6 +138,7 @@ namespace DatabaseProjekt
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             font = Content.Load<SpriteFont>("font");
+
 
 
             // adding curser to GameObejtes
@@ -149,6 +180,7 @@ namespace DatabaseProjekt
         /// 
         public static bool ExitGame  =false;
 
+
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
@@ -156,9 +188,7 @@ namespace DatabaseProjekt
                 Exit();
             if (ExitGame) { Quit(); };
 
-            
-             
-           
+
             foreach (var go in gameObjects)
             {
                 go.Update(gameTime);
@@ -178,8 +208,13 @@ namespace DatabaseProjekt
             //addGameObejts.Clear();
 
 
+
             // TODO: Add your update logic here
 
+
+            // Update currentState
+            //currentState.Update(gameTime);
+            // TODO: Add your update logic here
             base.Update(gameTime);
         }
 
@@ -199,15 +234,21 @@ namespace DatabaseProjekt
 
             // TODO: Add your drawing code here
 
-            
+
             spriteBatch.Begin();
 
-         
+
           // draws gameObejts 
+
             foreach (var go in gameObjects)
             {
                 go.Draw(spriteBatch);
             }
+
+
+            spriteBatch.DrawString(font, $"Player Position: check col: {StarteButton.CLICK}", new Vector2(300, 5), Color.Red);
+
+            //currentState.Draw(spriteBatch);
 
             wirteNames.Draw(spriteBatch);
             spriteBatch.DrawString(font, $"mouse Positio check col: {StarteButtone.CLICK} and {ExitButton.CLICK}" , new Vector2(300, 5), Color.Red);
@@ -218,5 +259,17 @@ namespace DatabaseProjekt
 
             base.Draw(gameTime);
         }
+        public void ChangeState(IState NewState)
+        {
+            if(currentState != null)
+            {
+                currentState.ExitState();
+            }
+
+            currentState = NewState;
+            NewState.EnterState();
+
+        }
+
     }
 }
