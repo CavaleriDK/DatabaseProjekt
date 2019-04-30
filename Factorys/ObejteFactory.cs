@@ -48,22 +48,18 @@ namespace DatabaseProjekt.Factorys
                    break;
                 case "StartKnap":
                     go.addComponet(new SpriteRender(type));
-
                     go.addComponet(new StarteButtone(new Vector2(640, 240)));
-
-
-
                     break;
                 case "ExitKnap":
                     go.addComponet(new SpriteRender(type));
                     go.addComponet(new ExitButton(new Vector2(640,460)));
                     break;
                  case "writenameher":
-                    go.addComponet(new SpriteRender("writenameher"));
+                    go.addComponet(new SpriteRender(type));
                     go.addComponet(new WriteName1(new Vector2(200, 200)));
                     break;
                 case "writenameher2":
-                    go.addComponet(new SpriteRender("writenameher"));
+                    go.addComponet(new SpriteRender(type));
                     go.addComponet(new Writename2(new Vector2(200, 400)));
                     break;
 
@@ -83,8 +79,40 @@ namespace DatabaseProjekt.Factorys
         public override GameObject Create(string type, ContentManager content)
         {
 
+            GameObject go = new GameObject();
+            switch (type)
+            {
+                case "Curser":
+                    go.addComponet(new Curser());
+                    go.addComponet(new SpriteRender(type));
+                    go.LoadContent(content);
+                    break;
+                case "StartKnap":
+                    go.addComponet(new SpriteRender(type));
+                    go.addComponet(new StarteButtone(new Vector2(640, 240)));
+                    go.LoadContent(content);
+                    break;
+                case "ExitKnap":
+                    go.addComponet(new SpriteRender(type));
+                    go.addComponet(new ExitButton(new Vector2(640, 460)));
+                    go.LoadContent(content);
+                    break;
+                case "writenameher":
+                    go.addComponet(new SpriteRender(type));
+                    go.addComponet(new WriteName1(new Vector2(200, 200)));
+                    go.LoadContent(content);
+                    break;
+                case "writenameher2":
+                    go.addComponet(new SpriteRender(type));
+                    go.addComponet(new Writename2(new Vector2(200, 400)));
+                    go.LoadContent(content);
+                    break;
 
-            throw new NotImplementedException();
+
+                default:
+                    break;
+            }
+            return go;
         }
 
         public override GameObject Create(string type, Vector2 Position)
@@ -126,15 +154,29 @@ namespace DatabaseProjekt.Factorys
                 case "Curser":
                     go.addComponet(new Curser());
                     go.addComponet(new SpriteRender(type));
-
-
+                    go.LoadContent(content);
                     break;
                 case "StartKnap":
                     go.addComponet(new SpriteRender(type));
-                    go.addComponet(new StarteButtone());
-                 
+                    go.addComponet(new StarteButtone(new Vector2(640, 240)));
                     go.LoadContent(content);
                     break;
+                case "ExitKnap":
+                    go.addComponet(new SpriteRender(type));
+                    go.addComponet(new ExitButton(new Vector2(640, 460)));
+                    go.LoadContent(content);
+                    break;
+                case "writenameher":
+                    go.addComponet(new SpriteRender(type));
+                    go.addComponet(new WriteName1(new Vector2(200, 200)));
+                    go.LoadContent(content);
+                    break;
+                case "writenameher2":
+                    go.addComponet(new SpriteRender(type));
+                    go.addComponet(new Writename2(new Vector2(200, 400)));
+                    go.LoadContent(content);
+                    break;
+
 
                 default:
                     break;
