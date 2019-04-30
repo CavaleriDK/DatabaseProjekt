@@ -61,5 +61,9 @@ namespace DatabaseProjekt
             cmd.CommandText = "UPDATE campsitemodel SET totalincome = " + this.totalIncome + "WHERE id =" + this.id;
             cmd.ExecuteNonQuery();
         }
+        public int MyID()
+        {
+            return this.id;
+        }
     }
 }

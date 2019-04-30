@@ -14,6 +14,10 @@ namespace DatabaseProjekt
         int campingGroundsId;
         SQLiteCommand cmd; 
 
+        public int ID { get => id; }
+        public string Type { get => type; }
+        public int CampingGroundsID { get => campingGroundsId; }
+
         /// <summary>
         /// constructor for the class
         /// </summary>
@@ -55,7 +59,7 @@ namespace DatabaseProjekt
         /// </summary>
         private void NewTent()
         {
-            cmd.CommandText = "INSERT INTO unittypemodel (id, type, campingpladsid, campistid) VALUES (null, 'Tent', " + this.campingGroundsId + ")";
+            cmd.CommandText = "INSERT INTO unittypemodel (id, type, campingpladsid) VALUES (null, 'Tent', " + this.campingGroundsId + ")";
             cmd.ExecuteNonQuery();
 
             string sqlrow = "SELECT last_insert_rowid()";
@@ -67,7 +71,7 @@ namespace DatabaseProjekt
         /// </summary>
         private void NewCaravan()
         {
-            cmd.CommandText = "INSERT INTO unittypemodel (id, type, campingpladsid, campistid) VALUES (null, 'Caravan', " + this.campingGroundsId + ")";
+            cmd.CommandText = "INSERT INTO unittypemodel (id, type, campingpladsid) VALUES (null, 'Caravan', " + this.campingGroundsId + ")";
             cmd.ExecuteNonQuery();
 
             string sqlrow = "SELECT last_insert_rowid()";
