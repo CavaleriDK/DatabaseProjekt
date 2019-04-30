@@ -43,6 +43,9 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="GameObjects\Camper.cs" />
+    <Compile Include="Factorys\CamperFactory.cs" />
+    <Compile Include="Model\Campermodel.cs" />
     <Compile Include="Model\CampsiteModel.cs" />
     <Compile Include="Controller\CampsiteController.cs" />
     <Compile Include="Buttons\WriteName1.cs" />
