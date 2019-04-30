@@ -112,7 +112,7 @@ namespace DatabaseProjekt.GameObjects
                     break;
                 case state.Pressed:
                     CLICK = "pressed";
-                    wirteNames.Write_Name2();
+                  
                         Cliket = true;
                     break;
                 case state.Hover:
@@ -121,6 +121,17 @@ namespace DatabaseProjekt.GameObjects
                     break;
                 default:
                     break;
+            }
+
+
+            if (Cliket == true)
+            {
+                wirteNames.Write_Name2();
+                if (Keyboard.GetState().IsKeyDown(Keys.Enter))
+                {
+                    /// smed player2 name i database Hvis vi skal kunne huske det
+                    Cliket = false;
+                }
             }
 
             base.Update(gameTime);

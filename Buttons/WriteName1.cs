@@ -18,7 +18,7 @@ namespace DatabaseProjekt.GameObjects
         WirteNames Names;
         public Vector2 pos;
         public static string CLICK;
-        public static bool Cliket;
+     
         public SpriteRender spriteRender { get; private set; }
         public Rectangle ColisionBox
         {
@@ -111,9 +111,8 @@ namespace DatabaseProjekt.GameObjects
 
                 Names.Write_name1(gameTime);
                 if (Keyboard.GetState().IsKeyDown(Keys.Enter))
-
                 {
-                    
+                    /// smed player1 name i database Hvis vi skal kunne huske det
                     WRITE = false;
                 }
             }
