@@ -56,7 +56,7 @@ namespace DatabaseProjekt
         static public  List<GameObject> gameObjects { get; set; } = new List<GameObject>();
        static  public List<GameObject> Remove { get; set; } = new List<GameObject>();
         public List<GameObject> addGameObejts { get; set; } = new List<GameObject>();
-
+        static public List<GameObject> playerOneGameObjects { get; set; } = new List<GameObject>();
 
 
         /// <summary>
