@@ -11,6 +11,19 @@ namespace DatabaseProjekt.GameState
 {
     class IntermediateState : IState
     {
+        private static IntermediateState instance;
+
+        public static IntermediateState Instance
+        {
+            get
+            {
+                if(instance == null)
+                {
+                    instance = new IntermediateState();
+                }
+                return instance;
+            }
+        }
         public void Draw(SpriteBatch spriteBatch)
         {
             //draw IntermediateState

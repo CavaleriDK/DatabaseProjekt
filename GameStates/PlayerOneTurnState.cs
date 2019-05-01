@@ -11,17 +11,17 @@ namespace DatabaseProjekt.GameState
 {
     class PlayerOneTurnState : IState
     {
-        private static PlayerOneTurnState insPlayerOne;
+        private static PlayerOneTurnState instance;
 
-        public static PlayerOneTurnState InsPlayerOne
+        public static PlayerOneTurnState Instance
         {
             get
             {
-                if(insPlayerOne == null)
+                if(instance == null)
                 {
-                    insPlayerOne = new PlayerOneTurnState();
+                    instance = new PlayerOneTurnState();
                 }
-                return insPlayerOne;
+                return instance;
             }
         }
 
