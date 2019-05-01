@@ -108,15 +108,22 @@ namespace DatabaseProjekt.GameObjects
                 case state.none:
                     CLICK = "non";
                     // do somthing 
-                    spriteRender.color = Color.White;
-                    gameObject.transForm.size = 1;
                     break;
                 case state.Pressed:
+<<<<<<< HEAD
                     CLICK = "pressed";                
                     WRITE = true;
                     break;
                 case state.Hover:                            
                     gameObject.transForm.size = 1.2f;
+=======
+                    CLICK = "pressed";
+
+                    WRITE = true;
+                    break;
+                case state.Hover:
+                    CLICK = "Hover";
+>>>>>>> parent of ef49daa... dghdfg
                     /// do somthing
                     break;
                 default:

@@ -138,7 +138,7 @@ namespace DatabaseProjekt.GameObjects
                 wirteNames.Write_Name2();
                 if (Keyboard.GetState().IsKeyDown(Keys.Enter))
                 {
-                    /// smed player2vbv½ name i database Hvis vi skal kunne huske det
+                    /// smed player2 name i database Hvis vi skal kunne huske det
                     Cliket = false;
                 }
             }

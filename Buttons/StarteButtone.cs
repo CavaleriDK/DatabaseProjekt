@@ -90,14 +90,11 @@ namespace DatabaseProjekt.GameObjects
             {
                 case state.none:
                     CLICK = "non";
-                    spriteRender.color = Color.White;
-                   
                     // do somthing 
                     break;
                 case state.Pressed:
                     CLICK = "pressed";
                     GameWorld.Remove.Add(this.gameObject);
-                    spriteRender.color = Color.Black;
                     foreach (var go in GameWorld.gameObjects)
                     {
 
@@ -108,7 +105,6 @@ namespace DatabaseProjekt.GameObjects
                 case state.Hover:
                     CLICK = "Hover";
                     /// do somthing
-                    spriteRender.color = Color.Red;
                     break;
                 default:
                     break;

@@ -15,8 +15,6 @@ namespace DatabaseProjekt.Componets
     {
         public string spriteName;
         public Rectangle rectangle { get; set; }
-        public Color color { get; set; }
-       
         public Texture2D Sprite;
         public Vector2 Orgin;
         public SpriteRender(string SpriteName)
@@ -29,7 +27,7 @@ namespace DatabaseProjekt.Componets
         /// <param name="content"></param>
         public override void LoadContent(ContentManager content)
         {
-            color = Color.White;
+
             Sprite = content.Load<Texture2D>(spriteName);
             rectangle = new Rectangle(0, 0, Sprite.Width, Sprite.Height);
             Orgin = new Vector2(Sprite.Width / 2, Sprite.Height / 2);
@@ -41,10 +39,8 @@ namespace DatabaseProjekt.Componets
         public override void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(Sprite, gameObject.transForm.positon, rectangle,
-            color, gameObject.transForm.rotetion, Orgin,
+            Color.White, gameObject.transForm.rotetion, Orgin,
             gameObject.transForm.size, gameObject.transForm.s, 0);
-            
-          
         }
     }
 }

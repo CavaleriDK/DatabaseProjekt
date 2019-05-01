@@ -140,7 +140,7 @@ namespace DatabaseProjekt.GameObjects
         public void Draw(SpriteBatch spriteBatch)
         {
      
-            spriteBatch.DrawString(Player1Name, $"Player 1 Name:{Player1 }", new Vector2(150, 200 ), Color.Black);
+            spriteBatch.DrawString(Player1Name, $"{WriteName1.WRITE}  Player 1 Name: {Player1 }" , new Vector2(150, 200 ), Color.Black);
             spriteBatch.DrawString(Player2Name, $"Player 2 Name:{Player2 }", new Vector2(150, 400), Color.Black);
         }
 
