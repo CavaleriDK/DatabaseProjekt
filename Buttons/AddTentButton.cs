@@ -12,13 +12,13 @@ using DatabaseProjekt.Componets;
 
 namespace DatabaseProjekt.Buttons
 {
-    class AddCaravanButton : Componet
+    class AddTentButton : Componet
     {
         public Vector2 pos;
-        SpriteFont player1spf;
-        SpriteFont player2spf;
+        SpriteFont player1SF;
+        SpriteFont player2SF;
         public SpriteRender spriteRender { get; private set; }
-        public static Vector2 MousePosition;        
+        public static Vector2 MousePosition;
         public Rectangle ColisionBox
         {
             get
@@ -46,27 +46,28 @@ namespace DatabaseProjekt.Buttons
             get { return _state; }
             set { _state = value; }
         }
-
+        
         public override void LoadContent(ContentManager content)
         {
             base.LoadContent(content);
             if (GameWorld.CurrentState.StateName == "PlayerOneTurnState")
             {
-                player1spf = content.Load<SpriteFont>("AddCaravanp1");
-            }
-            else if (GameWorld.CurrentState.StateName == "PlayerTwoTurnState")
+                player1SF = content.Load<SpriteFont>("AddTentp1");
+            }  
+            else if(GameWorld.CurrentState.StateName == "PlayerTwoTurnState")
             {
-                player2spf = content.Load<SpriteFont>("AddCaravanp2");
+                player2SF = content.Load<SpriteFont>("AddTentp2");
             }
+               
+            
         }
-
-        public AddCaravanButton()
+        public AddTentButton()
         {
             pos = new Vector2(GameWorld.Worldzice.X / 2, GameWorld.Worldzice.Y / 2);
             // thisrectangle = ColisionBox;
         }
 
-        public AddCaravanButton(Vector2 Position)
+        public AddTentButton(Vector2 Position)
         {
 
             this.pos = Position;
@@ -114,45 +115,45 @@ namespace DatabaseProjekt.Buttons
             switch (State)
             {
                 case state.none:
-                    
+
                     // do somthing 
                     break;
                 case state.Pressed:
                     if (GameWorld.CurrentState.StateName == "PlayerOneTurnState")
                     {
-                        CampsiteController.Instance.AddCaravan(true);
+                        CampsiteController.Instance.AddTent(true);
                     }
                     else if (GameWorld.CurrentState.StateName == "PlayerTwoTurnState")
                     {
-                        CampsiteController.Instance.AddCaravan(false);
+                        CampsiteController.Instance.AddTent(false);
                     }
-                    
+
                     break;
                 case state.Hover:
-                                    
+
                     /// do somthing
                     break;
                 default:
                     break;
             }
 
+
+
+
             base.Update(gameTime);
+
         }
         public override void Draw(SpriteBatch spriteBatch)
         {
-            
             base.Draw(spriteBatch);
-            if (GameWorld.CurrentState.StateName == "PlayerOneTurnState")
+            if(GameWorld.CurrentState.StateName == "PLayerOneTurnState")
             {
-                spriteBatch.DrawString(player1spf, "Add Caravan", new Vector2(50,200), Color.Black);
+                spriteBatch.DrawString(player1SF, "Add Tent", new Vector2(50,100), Color.Black);
             }
             else if (GameWorld.CurrentState.StateName == "PlayerTwoTurnState")
             {
-                spriteBatch.DrawString(player2spf, "Add Caravan",new Vector2 (50,200), Color.Black);
+                spriteBatch.DrawString(player2SF, "Add Tent",new Vector2 (50,100), Color.Black);
             }
         }
     }
 }
-
-    
-

@@ -13,6 +13,34 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin AddCaravanp1.spritefont
+/importer:FontDescriptionImporter
+/processor:LocalizedFontProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:AddCaravanp1.spritefont
+
+#begin AddCaravanp2.spritefont
+/importer:FontDescriptionImporter
+/processor:LocalizedFontProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:AddCaravanp2.spritefont
+
+#begin AddTentp1.spritefont
+/importer:FontDescriptionImporter
+/processor:LocalizedFontProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:AddTentp1.spritefont
+
+#begin AddTentp2.spritefont
+/importer:FontDescriptionImporter
+/processor:LocalizedFontProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:AddTentp2.spritefont
+
 #begin Colision.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -69,6 +97,34 @@
 /processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Compressed
 /build:Player_2.spritefont
+
+#begin RemoveCaravanp1.spritefont
+/importer:FontDescriptionImporter
+/processor:LocalizedFontProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:RemoveCaravanp1.spritefont
+
+#begin RemoveCaravanp2.spritefont
+/importer:FontDescriptionImporter
+/processor:LocalizedFontProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:RemoveCaravanp2.spritefont
+
+#begin RemoveTentp1.spritefont
+/importer:FontDescriptionImporter
+/processor:LocalizedFontProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:RemoveTentp1.spritefont
+
+#begin RemoveTentp2.spritefont
+/importer:FontDescriptionImporter
+/processor:LocalizedFontProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:RemoveTentp2.spritefont
 
 #begin StartKnap.png
 /importer:TextureImporter

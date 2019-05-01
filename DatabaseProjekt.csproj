@@ -44,6 +44,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Buttons\AddCaravanButton.cs" />
+    <Compile Include="Buttons\AddTentButton.cs" />
+    <Compile Include="Buttons\RemoveCaravanButton.cs" />
+    <Compile Include="Buttons\RemoveTentButton.cs" />
     <Compile Include="Factorys\CamperFactory.cs" />
     <Compile Include="Model\Campermodel.cs" />
     <Compile Include="Model\CampsiteModel.cs" />

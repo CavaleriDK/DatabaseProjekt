@@ -12,13 +12,13 @@ using DatabaseProjekt.Componets;
 
 namespace DatabaseProjekt.Buttons
 {
-    class AddCaravanButton : Componet
+    class RemoveCaravanButton : Componet
     {
         public Vector2 pos;
         SpriteFont player1spf;
         SpriteFont player2spf;
         public SpriteRender spriteRender { get; private set; }
-        public static Vector2 MousePosition;        
+        public static Vector2 MousePosition;
         public Rectangle ColisionBox
         {
             get
@@ -52,21 +52,21 @@ namespace DatabaseProjekt.Buttons
             base.LoadContent(content);
             if (GameWorld.CurrentState.StateName == "PlayerOneTurnState")
             {
-                player1spf = content.Load<SpriteFont>("AddCaravanp1");
+                player1spf = content.Load<SpriteFont>("RemoveCaravanp1");
             }
             else if (GameWorld.CurrentState.StateName == "PlayerTwoTurnState")
             {
-                player2spf = content.Load<SpriteFont>("AddCaravanp2");
+                player2spf = content.Load<SpriteFont>("RemoveCaravanp2");
             }
         }
 
-        public AddCaravanButton()
+        public RemoveCaravanButton()
         {
             pos = new Vector2(GameWorld.Worldzice.X / 2, GameWorld.Worldzice.Y / 2);
             // thisrectangle = ColisionBox;
         }
 
-        public AddCaravanButton(Vector2 Position)
+        public RemoveCaravanButton(Vector2 Position)
         {
 
             this.pos = Position;
@@ -114,22 +114,22 @@ namespace DatabaseProjekt.Buttons
             switch (State)
             {
                 case state.none:
-                    
+
                     // do somthing 
                     break;
                 case state.Pressed:
                     if (GameWorld.CurrentState.StateName == "PlayerOneTurnState")
                     {
-                        CampsiteController.Instance.AddCaravan(true);
+                        CampsiteController.Instance.RemoveCaravan(true);
                     }
                     else if (GameWorld.CurrentState.StateName == "PlayerTwoTurnState")
                     {
-                        CampsiteController.Instance.AddCaravan(false);
+                        CampsiteController.Instance.RemoveCaravan(false);
                     }
-                    
+
                     break;
                 case state.Hover:
-                                    
+
                     /// do somthing
                     break;
                 default:
@@ -140,19 +140,19 @@ namespace DatabaseProjekt.Buttons
         }
         public override void Draw(SpriteBatch spriteBatch)
         {
-            
+
             base.Draw(spriteBatch);
             if (GameWorld.CurrentState.StateName == "PlayerOneTurnState")
             {
-                spriteBatch.DrawString(player1spf, "Add Caravan", new Vector2(50,200), Color.Black);
+                spriteBatch.DrawString(player1spf, "Remove Caravan", new Vector2(300, 200), Color.Black);
             }
             else if (GameWorld.CurrentState.StateName == "PlayerTwoTurnState")
             {
-                spriteBatch.DrawString(player2spf, "Add Caravan",new Vector2 (50,200), Color.Black);
+                spriteBatch.DrawString(player2spf, "Remove Caravan", new Vector2(300, 200), Color.Black);
             }
         }
     }
 }
 
-    
+
 
