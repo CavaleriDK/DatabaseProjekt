@@ -18,8 +18,12 @@ namespace DatabaseProjekt.GameObjects
         WirteNames Names;
         public Vector2 pos;
         public static string CLICK;
+<<<<<<< HEAD
         SpriteFont Player1Name;
         SpriteFont Player2Name;
+=======
+        public static bool Cliket;
+>>>>>>> parent of 92b7f50... lsl
         public SpriteRender spriteRender { get; private set; }
         public Rectangle ColisionBox
         {
@@ -120,8 +124,9 @@ namespace DatabaseProjekt.GameObjects
 
                 Names.Write_name1();
                 if (Keyboard.GetState().IsKeyDown(Keys.Enter))
+
                 {
-                    /// smed player1 name i database Hvis vi skal kunne huske det
+                    
                     WRITE = false;
                 }
             }

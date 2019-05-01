@@ -111,7 +111,12 @@ namespace DatabaseProjekt.GameObjects
                     // do somthing 
                     break;
                 case state.Pressed:
+<<<<<<< HEAD
                                    
+=======
+                    CLICK = "pressed";
+                    wirteNames.Write_Name2();
+>>>>>>> parent of 92b7f50... lsl
                         Cliket = true;
                     break;
                 case state.Hover:
@@ -122,6 +127,7 @@ namespace DatabaseProjekt.GameObjects
                     break;
             }
 
+<<<<<<< HEAD
 
             if (Cliket == true)
             {
@@ -133,6 +139,8 @@ namespace DatabaseProjekt.GameObjects
                 }
             }
 
+=======
+>>>>>>> parent of 92b7f50... lsl
             base.Update(gameTime);
 
         }
