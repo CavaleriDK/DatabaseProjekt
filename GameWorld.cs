@@ -66,9 +66,12 @@ namespace DatabaseProjekt
         public List<GameObject> addGameObejts { get; set; } = new List<GameObject>();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> parent of ddaa792... Revert "lm"
+=======
+>>>>>>> parent of 9321a0b... revetrer
 =======
 >>>>>>> parent of 9321a0b... revetrer
         static public List<GameObject> playerOneGameObjects { get; set; } = new List<GameObject>();
