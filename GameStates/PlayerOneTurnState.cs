@@ -11,9 +11,27 @@ namespace DatabaseProjekt.GameState
 {
     class PlayerOneTurnState : IState
     {
+        private static PlayerOneTurnState insPlayerOne;
+
+        public static PlayerOneTurnState InsPlayerOne
+        {
+            get
+            {
+                if(insPlayerOne == null)
+                {
+                    insPlayerOne = new PlayerOneTurnState();
+                }
+                return insPlayerOne;
+            }
+        }
+
         public void Draw(SpriteBatch spriteBatch)
         {
             //draw PlayerOneTurnState
+            foreach(GameObject go in GameWorld.playerOneGameObjects)
+            {
+                go.Draw(spriteBatch);
+            }
         }
 
         public void EnterState()
