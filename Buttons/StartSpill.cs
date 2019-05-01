@@ -109,7 +109,7 @@ namespace DatabaseProjekt.Buttons
                     break;
                 case state.Pressed:
                    
-                 //GameWorld.ChangeState(PlayerOneTurnState.InsPlayerOne);
+                   GameWorld.ChangeState(PlayerOneTurnState.InsPlayerOne);
                     Cliket = true;
                     break;
                 case state.Hover:
