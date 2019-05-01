@@ -30,17 +30,17 @@ namespace DatabaseProjekt.GameObjects
             List<Campermodel> NewCampers = new List<Campermodel>(); 
             for (int i = 0; i < 30; i++)
             {
-                
-                int randomPay = rnd.Next(0);         
+
+                int randomPay;       
                 int randomPercent = rnd.Next(100);
                 if (randomPercent < 50)
                 {
-                    rnd.Next(10, 120);
+                    randomPay = rnd.Next(10, 120);
                     NewCampers.Add(new Campermodel("Tent", randomPay));
                 }
                 else
                 {
-                    rnd.Next(50, 200);
+                    randomPay = rnd.Next(50, 200);
                     NewCampers.Add(new Campermodel("Caravan", randomPay));
                 }
                 
