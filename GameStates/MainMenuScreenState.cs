@@ -16,9 +16,6 @@ namespace DatabaseProjekt.GameState
     {
 
 
-
-
-
         private static MainMenuScreenState instance;
         public static MainMenuScreenState Instance
         {
