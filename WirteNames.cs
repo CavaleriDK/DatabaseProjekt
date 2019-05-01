@@ -8,9 +8,13 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using DatabaseProjekt.Componets;
+<<<<<<< HEAD
 using DatabaseProjekt.Factorys;
 using DatabaseProjekt.GameState;
 using DatabaseProjekt.Buttons;
+=======
+
+>>>>>>> parent of 59b57df...  mmklpp
 namespace DatabaseProjekt.GameObjects
 {
     class WirteNames
@@ -31,10 +35,18 @@ namespace DatabaseProjekt.GameObjects
        
         public void loadContent(ContentManager content)
         {
+<<<<<<< HEAD
            
             GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("writenameher2", content));
             GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("writenameher", content));
             GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("StartKnap", new Vector2(900, 300), content));
+=======
+            Player1Name = content.Load<SpriteFont>("Player_1");
+
+            Player2Name = content.Load<SpriteFont>("Player_2");
+
+
+>>>>>>> parent of 59b57df...  mmklpp
         }
 
         private static string removeLastChar(string str)

@@ -13,7 +13,7 @@ namespace DatabaseProjekt
 {
     public class GameWorld : Game
     {
-     private static IState currentState;
+        private IState currentState;
         //private static GameWorld instance;
         static GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -233,8 +233,12 @@ namespace DatabaseProjekt
 
             base.Draw(gameTime);
         }
+<<<<<<< HEAD
       
         public static void ChangeState(IState NewState)
+=======
+        public void ChangeState(IState NewState)
+>>>>>>> parent of 59b57df...  mmklpp
         {
             if(currentState != null)
             {

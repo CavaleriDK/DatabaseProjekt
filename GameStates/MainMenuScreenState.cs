@@ -33,14 +33,23 @@ namespace DatabaseProjekt.GameState
         
         public void Draw(SpriteBatch spritebatch)
         {
+<<<<<<< HEAD
         
          
+=======
+
+
+
+>>>>>>> parent of 59b57df...  mmklpp
             foreach (var go in GameWorld.gameObjects)
             {
                 go.Draw(spritebatch);
             }
           
+<<<<<<< HEAD
             
+=======
+>>>>>>> parent of 59b57df...  mmklpp
         }
 
 
