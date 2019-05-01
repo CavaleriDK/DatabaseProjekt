@@ -48,7 +48,11 @@ namespace DatabaseProjekt.Factorys
                    break;
                 case "StartKnap":
                     go.addComponet(new SpriteRender(type));
+
                     go.addComponet(new StarteButtone(new Vector2(640, 240)));
+
+
+
                     break;
                 case "ExitKnap":
                     go.addComponet(new SpriteRender(type));
@@ -79,6 +83,7 @@ namespace DatabaseProjekt.Factorys
         public override GameObject Create(string type, ContentManager content)
         {
 
+<<<<<<< HEAD
             GameObject go = new GameObject();
             switch (type)
             {
@@ -108,11 +113,10 @@ namespace DatabaseProjekt.Factorys
                     go.LoadContent(content);
                     break;
 
+=======
+>>>>>>> parent of 882ed82... fed
 
-                default:
-                    break;
-            }
-            return go;
+            throw new NotImplementedException();
         }
 
         public override GameObject Create(string type, Vector2 Position)
@@ -154,10 +158,12 @@ namespace DatabaseProjekt.Factorys
                 case "Curser":
                     go.addComponet(new Curser());
                     go.addComponet(new SpriteRender(type));
-                    go.LoadContent(content);
+
+
                     break;
                 case "StartKnap":
                     go.addComponet(new SpriteRender(type));
+<<<<<<< HEAD
 <<<<<<< HEAD
                     go.addComponet(new StarteButtone(Position));
 =======
@@ -182,6 +188,12 @@ namespace DatabaseProjekt.Factorys
                     go.LoadContent(content);
                     break;
 
+=======
+                    go.addComponet(new StarteButtone());
+                 
+                    go.LoadContent(content);
+                    break;
+>>>>>>> parent of 882ed82... fed
 
                 default:
                     break;

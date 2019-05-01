@@ -59,10 +59,17 @@ namespace DatabaseProjekt.GameState
         public void EnterState()
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             name = new WirteNames();
          
 =======
 >>>>>>> parent of 94ca0fa... das
+=======
+           
+         // GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("Curser"));
+          GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("StartKnap"));
+          GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("ExitKnap"));
+>>>>>>> parent of 882ed82... fed
             //det som skal ske før MainMenuScreenState påbegyndes
         }
 
@@ -80,6 +87,7 @@ namespace DatabaseProjekt.GameState
 
         public void load(ContentManager content)
         {
+<<<<<<< HEAD
             GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("StartKnap",content));
             GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("ExitKnap",content));
             //GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("writenameher2", content));
@@ -90,6 +98,9 @@ namespace DatabaseProjekt.GameState
 
 =======
             //det som skal ske før MainMenuScreenState afsluttes 
+=======
+            throw new NotImplementedException();
+>>>>>>> parent of 882ed82... fed
         }
 
 >>>>>>> parent of 94ca0fa... das
