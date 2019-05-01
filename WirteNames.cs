@@ -21,6 +21,7 @@ namespace DatabaseProjekt.GameObjects
     {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   
 
         DontLookAtMe Write;
@@ -29,6 +30,9 @@ namespace DatabaseProjekt.GameObjects
         
 =======
         public static string Player1, Player2;
+=======
+        public static string Player1, Player2;
+>>>>>>> parent of 92b7f50... lsl
         char bogstav;
         public bool Don =false;
       
@@ -64,6 +68,7 @@ namespace DatabaseProjekt.GameObjects
         public char Writebogstav()
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             if (str.Length >= 1)
             {
                 return str.Substring(0, str.Length - 1);
@@ -73,6 +78,10 @@ namespace DatabaseProjekt.GameObjects
         }    
 =======
             return str;
+=======
+            //Keys key;
+
+>>>>>>> parent of 92b7f50... lsl
 =======
             //Keys key;
 
@@ -101,8 +110,11 @@ namespace DatabaseProjekt.GameObjects
 >>>>>>> parent of 882ed82... fed
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         public void Write_name1()
         {      
+=======
+>>>>>>> parent of 92b7f50... lsl
 =======
 >>>>>>> parent of 92b7f50... lsl
 
@@ -115,9 +127,13 @@ namespace DatabaseProjekt.GameObjects
         }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 =======
         
+=======
+
+>>>>>>> parent of 92b7f50... lsl
 =======
 
 >>>>>>> parent of 92b7f50... lsl
