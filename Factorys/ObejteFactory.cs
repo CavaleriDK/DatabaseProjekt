@@ -9,7 +9,6 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using DatabaseProjekt.GameObjects;
 using DatabaseProjekt.Componets;
-using DatabaseProjekt.Buttons;
 namespace DatabaseProjekt.Factorys
 {
     public class ObejteFactory : Factory
@@ -104,7 +103,7 @@ namespace DatabaseProjekt.Factorys
                     go.LoadContent(content);
                     break;
                 case "writenameher2":
-                    go.addComponet(new SpriteRender("writenameher"));
+                    go.addComponet(new SpriteRender(type));
                     go.addComponet(new Writename2(new Vector2(200, 400)));
                     go.LoadContent(content);
                     break;
@@ -160,11 +159,6 @@ namespace DatabaseProjekt.Factorys
                 case "StartKnap":
                     go.addComponet(new SpriteRender(type));
                     go.addComponet(new StarteButtone(new Vector2(640, 240)));
-                    go.LoadContent(content);
-                    break;
-                case "StartSpil":
-                    go.addComponet(new SpriteRender("StartKnap"));
-                    go.addComponet(new StartSpill(Position));
                     go.LoadContent(content);
                     break;
                 case "ExitKnap":

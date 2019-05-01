@@ -14,33 +14,33 @@ namespace DatabaseProjekt.GameObjects
 {
     class WirteNames
     {
-         DontLookAtMe Write;
 
+        KeyboardState laststate = new KeyboardState();
+
+        DontLookAtMe Write;
 
         public static string Player1, Player2;
-
-
-
-        public WirteNames()
+       
+        public bool Don =false;
+        public bool NameLength;
+        SpriteFont Player1Name;
+        SpriteFont Player2Name;
+   
+        public  WirteNames()
         {
-
-
             Write = new DontLookAtMe();
             Keyboard.GetState();
+
         }
+       
+  
 
-
-
-        /// <summary>
-        /// loding Wirte NAmes And startspil buttoon
-        /// </summary>
-        /// <param name="content"></param>
         public void loadContent(ContentManager content)
         {
-            GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("writenameher2", content));
-            GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("writenameher", content));
-            GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("StartSpil", new Vector2(900, 300), content));
-
+           
+            //Player1Name = content.Load<SpriteFont>("Player_1");
+            //GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create()
+            //Player2Name = content.Load<SpriteFont>("Player_2");
 
 
         }
@@ -57,7 +57,7 @@ namespace DatabaseProjekt.GameObjects
 
        
 
-        public void Write_name1()
+        public void Write_name1(GameTime gameTime)
         {      
 
          Player1 =  Write.Writebogstav(15);
@@ -67,7 +67,13 @@ namespace DatabaseProjekt.GameObjects
         {
          Player2 = Write.Writebogstav(15);
         }
-    
+        
+        public void Draw(SpriteBatch spriteBatch)
+        {
+     
+            //spriteBatch.DrawString(Player1Name, $"Player 1 Name:{Player1 }", new Vector2(150, 200 ), Color.Black);
+            //spriteBatch.DrawString(Player2Name, $"Player 2 Name:{Player2 }", new Vector2(150, 400), Color.Black);
+        }
 
 
     }

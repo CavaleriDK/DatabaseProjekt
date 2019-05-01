@@ -102,8 +102,10 @@ namespace DatabaseProjekt.GameObjects
                     spriteRender.color = Color.Black;
                     foreach (var go in GameWorld.gameObjects)
                     {
+
                         GameWorld.Remove.Add(go);
                     }
+
                     Cliket = true;
                     break;
                 case state.Hover:

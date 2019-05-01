@@ -7,7 +7,7 @@ using DatabaseProjekt.GameObjects;
 using DatabaseProjekt.Factorys;
 using System.Data.SQLite;
 using DatabaseProjekt.GameState;
-using Microsoft.Xna.Framework.Content;
+
 namespace DatabaseProjekt
 {
     public class GameWorld : Game
@@ -17,7 +17,7 @@ namespace DatabaseProjekt
         static GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-       public static ContentManager GameContent;
+
         private static SQLiteConnection connection;
         SpriteFont font;
 
@@ -87,7 +87,7 @@ namespace DatabaseProjekt
             //database skal vaere her
             
             Connection.Open();
-            GameContent = Content;
+           
             Content = Content;
             graphics = new GraphicsDeviceManager(this);
             graphics.PreferredBackBufferWidth = 1280;

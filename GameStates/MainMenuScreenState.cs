@@ -16,11 +16,12 @@ namespace DatabaseProjekt.GameState
     {
 
 
+<<<<<<< HEAD
 
         WirteNames name;
+=======
+>>>>>>> parent of e9480d8... Damn
 
-        public bool AddwriteNames = false;
-        public static bool tekst = true;
 
 
 
@@ -48,20 +49,17 @@ namespace DatabaseProjekt.GameState
 
         public void EnterState()
         {
-            name = new WirteNames();
-            // GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("Curser"));
-
+           
+         // GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("Curser"));
+         
             //det som skal ske før MainMenuScreenState påbegyndes
         }
 
         public void ExitState()
         {
 
-            foreach (var go in GameWorld.gameObjects)
-            {
-                GameWorld.Remove.Add(go);
-            }
-
+          
+         
             //det som skal ske før MainMenuScreenState afsluttes 
         }
 
@@ -74,11 +72,6 @@ namespace DatabaseProjekt.GameState
 
         public void Update(GameTime gameTime)
         {
-            if (StarteButtone.Cliket == true &&  AddwriteNames == false)
-            {
-                name.loadContent(GameWorld.GameContent);
-       
-            }
             //update for MainMenuScreenState
         }
     }
