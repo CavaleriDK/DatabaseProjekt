@@ -16,11 +16,10 @@ namespace DatabaseProjekt.GameState
     {
 
 
-<<<<<<< HEAD
+
 
         WirteNames name;
-=======
->>>>>>> parent of e9480d8... Damn
+
 
 
 
