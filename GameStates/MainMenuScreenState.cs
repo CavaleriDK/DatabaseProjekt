@@ -16,7 +16,10 @@ namespace DatabaseProjekt.GameState
     {
 
 
+        WirteNames name;
 
+        public bool AddwriteNames = false;
+        public static bool tekst = true;
 
 
         private static MainMenuScreenState instance;
@@ -43,17 +46,20 @@ namespace DatabaseProjekt.GameState
 
         public void EnterState()
         {
-           
-         // GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("Curser"));
-         
+            name = new WirteNames();
+            // GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("Curser"));
+
             //det som skal ske før MainMenuScreenState påbegyndes
         }
 
         public void ExitState()
         {
 
-          
-         
+            foreach (var go in GameWorld.gameObjects)
+            {
+                GameWorld.Remove.Add(go);
+            }
+
             //det som skal ske før MainMenuScreenState afsluttes 
         }
 
@@ -66,6 +72,11 @@ namespace DatabaseProjekt.GameState
 
         public void Update(GameTime gameTime)
         {
+            if (StarteButtone.Cliket == true &&  AddwriteNames == false)
+            {
+                name.loadContent(GameWorld.GameContent);
+       
+            }
             //update for MainMenuScreenState
         }
     }

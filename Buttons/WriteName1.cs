@@ -18,7 +18,8 @@ namespace DatabaseProjekt.GameObjects
         WirteNames Names;
         public Vector2 pos;
         public static string CLICK;
-     
+        SpriteFont Player1Name;
+        SpriteFont Player2Name;
         public SpriteRender spriteRender { get; private set; }
         public Rectangle ColisionBox
         {
@@ -46,7 +47,13 @@ namespace DatabaseProjekt.GameObjects
             get { return _state; }
             set { _state = value; }
         }
+        public override void LoadContent(ContentManager content)
+        {
+            Player1Name = content.Load<SpriteFont>("Player_1");
+            Player2Name = content.Load<SpriteFont>("Player_2");
 
+            base.LoadContent(content);
+        }
         public WriteName1()
         {
             Names = new WirteNames();
@@ -113,7 +120,7 @@ namespace DatabaseProjekt.GameObjects
             if(WRITE == true)
             {
 
-                Names.Write_name1(gameTime);
+                Names.Write_name1();
                 if (Keyboard.GetState().IsKeyDown(Keys.Enter))
                 {
                     /// smed player1 name i database Hvis vi skal kunne huske det
@@ -121,12 +128,13 @@ namespace DatabaseProjekt.GameObjects
                 }
             }
 
-         
-
-
-
-            base.Update(gameTime);
+                        base.Update(gameTime);
         }
-        
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            spriteBatch.DrawString(Player1Name, $"Player 1 Name:{WirteNames.Player1}", new Vector2(150, 200), Color.Black);
+            spriteBatch.DrawString(Player2Name, $"Player 2 Name:{WirteNames.Player2}", new Vector2(150, 400), Color.Black);
+            base.Draw(spriteBatch);
+        }
     }
 }

@@ -3,24 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System;
-using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using DatabaseProjekt.Componets;
+using DatabaseProjekt.GameState;
 
-namespace DatabaseProjekt.GameObjects
+namespace DatabaseProjekt.Buttons
 {
-    class StarteButtone : Componet
+    public class StartSpill : Componet
     {
-
-   
-
         public Vector2 pos;
-        public static string CLICK;
-        public static bool Cliket;
+
+        public static bool Cliket = false;
         public SpriteRender spriteRender { get; private set; }
         public Rectangle ColisionBox
         {
@@ -48,28 +44,46 @@ namespace DatabaseProjekt.GameObjects
             get { return _state; }
             set { _state = value; }
         }
-       
-        public StarteButtone()
+        /// <summary>
+        /// Constructor1
+        /// </summary>
+        public StartSpill()
         {
+
             pos = new Vector2(GameWorld.Worldzice.X / 2, GameWorld.Worldzice.Y / 2);
         }
-        public StarteButtone(Vector2 Position){
+        /// <summary>
+        /// >Constructor2 kan adde position
+        /// </summary>
+        /// <param name="Position"></param>
+        public StartSpill(Vector2 Position)
+        {
+
             this.pos = Position;
         }
+        /// <summary>
+        /// sætter position
+        /// </summary>
+        /// <param name="gameObject"></param>
         public override void Attach(GameObject gameObject)
         {
             base.Attach(gameObject);
             gameObject.transForm.positon = pos;
-    
+
+
         }
+
+        /// <summary>
+        /// henter gameobets spriterender ned for at finde rectanglen 
+        /// collision patting 
+        /// </summary>
+        /// <param name="gameTime"></param>
         public override void Update(GameTime gameTime)
         {
             spriteRender = (SpriteRender)gameObject.FindCompent("SpriteRender");
-            MouseState mouse = Mouse.GetState();             
+            MouseState mouse = Mouse.GetState();
             ///checks om musen er inden for knappends område og om der bliver 
             ///clickt elelr hovert
-            ///
-            
             if (ColisionBox.Contains(mouse.X, mouse.Y))
             {
                 if (mouse.LeftButton == ButtonState.Pressed)
@@ -78,8 +92,8 @@ namespace DatabaseProjekt.GameObjects
                 }
                 if (mouse.LeftButton == ButtonState.Released)
                 {
-                 State = state.Hover;
-                }                 
+                    State = state.Hover;
+                }
             }
             else
             {
@@ -91,36 +105,29 @@ namespace DatabaseProjekt.GameObjects
             switch (State)
             {
                 case state.none:
-                    CLICK = "non";
-                    spriteRender.color = Color.White;
-                   
+
                     // do somthing 
                     break;
                 case state.Pressed:
-                    CLICK = "pressed";
-                    GameWorld.Remove.Add(this.gameObject);
-                    spriteRender.color = Color.Black;
-                    foreach (var go in GameWorld.gameObjects)
-                    {
-                        GameWorld.Remove.Add(go);
-                    }
+
+                    GameWorld.ChangeState(PlayerOneTurnState.Instance);
                     Cliket = true;
                     break;
                 case state.Hover:
-                    CLICK = "Hover";
+
                     /// do somthing
-                    spriteRender.color = Color.Red;
                     break;
                 default:
                     break;
-            }        
-         
-         
-                     
-            
+            }
+
+
 
 
             base.Update(gameTime);
+
         }
+
+
     }
 }
