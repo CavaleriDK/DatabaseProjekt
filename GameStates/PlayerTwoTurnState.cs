@@ -11,6 +11,7 @@ namespace DatabaseProjekt.GameState
 {
     class PlayerTwoTurnState : IState
     {
+        public string StateName { get => "PlayerTwoTurnState"; }
         private static PlayerTwoTurnState instance;
 
         public static PlayerTwoTurnState Instance

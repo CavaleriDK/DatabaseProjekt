@@ -16,6 +16,8 @@ namespace DatabaseProjekt.GameState
     {
 
 
+        public string StateName { get => "MainMenuScreenState"; }
+
         private static MainMenuScreenState instance;
         public static MainMenuScreenState Instance
         {

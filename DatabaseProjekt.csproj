@@ -50,6 +50,7 @@
     <Compile Include="Buttons\WriteName1.cs" />
     <Compile Include="Buttons\Writename2.cs" />
     <Compile Include="DontLookAtMe.cs" />
+    <Compile Include="Buttons\SetCaravanPriceButton.cs" />
     <Compile Include="WirteNames.cs" />
     <Compile Include="Factorys\ObejteFactory.cs" />
     <Compile Include="Buttons\StarteButtone.cs" />

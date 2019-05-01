@@ -12,11 +12,12 @@ namespace DatabaseProjekt
 {
     public class GameWorld : Game
     {
-     private static IState currentState;
+        private static IState currentState;
         //private static GameWorld instance;
         static GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        public static IState CurrentState { get => currentState; }
 
         private static SQLiteConnection connection;
         SpriteFont font;

@@ -11,6 +11,7 @@ namespace DatabaseProjekt.GameState
 {
     class IntermediateState : IState
     {
+        public string StateName { get => "IntermediateState"; } 
         private static IntermediateState instance;
 
         public static IntermediateState Instance
