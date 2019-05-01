@@ -229,6 +229,7 @@ namespace DatabaseProjekt
 
             currentState.Draw(spriteBatch);
 
+
            
             spriteBatch.DrawString(font, $"mouse Positio check col: {StarteButtone.CLICK} and {ExitButton.CLICK}" , new Vector2(300, 5), Color.Red);
 
