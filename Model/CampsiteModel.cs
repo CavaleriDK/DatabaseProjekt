@@ -16,6 +16,12 @@ namespace DatabaseProjekt
         int priceOfCaravan;
         SQLiteCommand cmd;
 
+        public int ID { get => id; }
+        public string Title { get => title; }
+        public int TotalIncome { get => totalIncome; }
+        public int PriceOfTent { get => priceOfTent; }
+        public int PriceOfCaravan { get => priceOfCaravan; }
+
         public CampsiteModel(string title)
         {
             this.title = title;
@@ -54,7 +60,7 @@ namespace DatabaseProjekt
             cmd.ExecuteNonQuery();
         }
 
-        public void TotalIncome(int earnings)
+        public void ChangeTotalIncome(int earnings)
         {
             totalIncome += earnings;
             // INCREAMENT // UPDATE (total_income) VALUES(total_ WHERE id = this.id
