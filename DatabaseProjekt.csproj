@@ -43,6 +43,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Buttons\AddCaravanButton.cs" />
     <Compile Include="Factorys\CamperFactory.cs" />
     <Compile Include="Model\Campermodel.cs" />
     <Compile Include="Model\CampsiteModel.cs" />
