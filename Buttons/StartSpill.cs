@@ -8,17 +8,14 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using DatabaseProjekt.Componets;
-
-namespace DatabaseProjekt.GameObjects
+using DatabaseProjekt.GameState;
+namespace DatabaseProjekt.Buttons
 {
-    class Writename2 : Componet
+  public  class StartSpill :Componet
     {
-
-        WirteNames wirteNames;
-
         public Vector2 pos;
-        public static string CLICK;
-        public static bool Cliket;
+       
+        public static bool Cliket= false;
         public SpriteRender spriteRender { get; private set; }
         public Rectangle ColisionBox
         {
@@ -49,18 +46,18 @@ namespace DatabaseProjekt.GameObjects
         /// <summary>
         /// Constructor1
         /// </summary>
-        public Writename2()
+        public StartSpill()
         {
-            wirteNames = new WirteNames();
+         
             pos = new Vector2(GameWorld.Worldzice.X / 2, GameWorld.Worldzice.Y / 2);
         }
         /// <summary>
         /// >Constructor2 kan adde position
         /// </summary>
         /// <param name="Position"></param>
-        public Writename2(Vector2 Position)
+        public StartSpill(Vector2 Position)
         {
-            wirteNames = new WirteNames();
+    
             this.pos = Position;
         }
         /// <summary>
@@ -72,7 +69,7 @@ namespace DatabaseProjekt.GameObjects
             base.Attach(gameObject);
             gameObject.transForm.positon = pos;
 
-            
+
         }
 
         /// <summary>
@@ -107,31 +104,24 @@ namespace DatabaseProjekt.GameObjects
             switch (State)
             {
                 case state.none:
-                    gameObject.transForm.size = 1f;
+
                     // do somthing 
                     break;
                 case state.Pressed:
-                                   
-                        Cliket = true;
+                   
+                   GameWorld.ChangeState(PlayerOneTurnState.InsPlayerOne);
+                    Cliket = true;
                     break;
                 case state.Hover:
+
                     /// do somthing
-                     gameObject.transForm.size = 1.2f;
                     break;
                 default:
                     break;
             }
 
 
-            if (Cliket == true)
-            {
-                wirteNames.Write_Name2();
-                if (Keyboard.GetState().IsKeyDown(Keys.Enter))
-                {
-                    /// smed player2vbv½ name i database Hvis vi skal kunne huske det
-                    Cliket = false;
-                }
-            }
+   
 
             base.Update(gameTime);
 
@@ -139,4 +129,4 @@ namespace DatabaseProjekt.GameObjects
 
 
     }
-   }
+}

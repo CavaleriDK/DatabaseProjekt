@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Content;
 using System.Collections.Generic;
 using DatabaseProjekt.Componets;
 using DatabaseProjekt.GameObjects;
@@ -16,13 +17,11 @@ namespace DatabaseProjekt
         //private static GameWorld instance;
         static GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-
-
+        public static ContentManager GameContent;
         private static SQLiteConnection connection;
         SpriteFont font;
+        public static bool ExitGame = false;
 
-        
-        WirteNames wirteNames;
         private static GameWorld instance;
         public static GameWorld Instance
         {
@@ -54,10 +53,10 @@ namespace DatabaseProjekt
             }
         }
         static public  List<GameObject> gameObjects { get; set; } = new List<GameObject>();
-       static  public List<GameObject> Remove { get; set; } = new List<GameObject>();
+        static  public List<GameObject> Remove { get; set; } = new List<GameObject>();
         public List<GameObject> addGameObejts { get; set; } = new List<GameObject>();
         static public List<GameObject> playerOneGameObjects { get; set; } = new List<GameObject>();
-
+        
 
         /// <summary>
         /// GameWorldInstance
@@ -86,6 +85,7 @@ namespace DatabaseProjekt
             Connection.Open();
            
             Content = Content;
+            GameContent = Content;
             graphics = new GraphicsDeviceManager(this);
             graphics.PreferredBackBufferWidth = 1280;
             graphics.PreferredBackBufferHeight = 720;
@@ -104,7 +104,7 @@ namespace DatabaseProjekt
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here'
-            wirteNames = new WirteNames();
+        
             this.IsMouseVisible = true;
 
             /// setting world zise to vector2
@@ -159,7 +159,7 @@ namespace DatabaseProjekt
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         /// 
-        public static bool ExitGame  =false;
+   
 
 
         protected override void Update(GameTime gameTime)
@@ -216,39 +216,27 @@ namespace DatabaseProjekt
             spriteBatch.Begin();
 
           // draws gameObejts 
-
-            foreach (var go in gameObjects)
-            {
-                go.Draw(spriteBatch);
-            }
-
+            //foreach (var go in gameObjects)
+            //{
+            //    go.Draw(spriteBatch);
+            //}
 
             currentState.Draw(spriteBatch);
-
-           
-            spriteBatch.DrawString(font, $"mouse Positio check col: {StarteButtone.CLICK} and {ExitButton.CLICK}" , new Vector2(300, 5), Color.Red);
-
-
-           
+          
+          //  spriteBatch.DrawString(font, $"mouse Positio check col: {StarteButtone.CLICK} and {ExitButton.CLICK}" , new Vector2(300, 5), Color.Red);           
             spriteBatch.End();
 
             base.Draw(gameTime);
         }
-
-        
-        static void ChangeState(IState NewState)
+      
+        public static void ChangeState(IState NewState)
         {
             if(currentState != null)
             {
                 currentState.ExitState();
             }
-
             currentState = NewState;
-            NewState.EnterState();
-        
-            
-
-
+            NewState.EnterState();                 
         }
 
     }

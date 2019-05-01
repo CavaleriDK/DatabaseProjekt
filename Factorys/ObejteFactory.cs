@@ -55,11 +55,11 @@ namespace DatabaseProjekt.Factorys
                     go.addComponet(new ExitButton(new Vector2(640,460)));
                     break;
                  case "writenameher":
-                    go.addComponet(new SpriteRender(type));
+                    go.addComponet(new SpriteRender("writenameher"));
                     go.addComponet(new WriteName1(new Vector2(200, 200)));
                     break;
                 case "writenameher2":
-                    go.addComponet(new SpriteRender(type));
+                    go.addComponet(new SpriteRender("writenameher"));
                     go.addComponet(new Writename2(new Vector2(200, 400)));
                     break;
 
@@ -103,7 +103,7 @@ namespace DatabaseProjekt.Factorys
                     go.LoadContent(content);
                     break;
                 case "writenameher2":
-                    go.addComponet(new SpriteRender(type));
+                    go.addComponet(new SpriteRender("writenameher"));
                     go.addComponet(new Writename2(new Vector2(200, 400)));
                     go.LoadContent(content);
                     break;
@@ -158,7 +158,7 @@ namespace DatabaseProjekt.Factorys
                     break;
                 case "StartKnap":
                     go.addComponet(new SpriteRender(type));
-                    go.addComponet(new StarteButtone(new Vector2(640, 240)));
+                    go.addComponet(new StarteButtone(Position));
                     go.LoadContent(content);
                     break;
                 case "ExitKnap":

@@ -15,10 +15,10 @@ namespace DatabaseProjekt.GameState
     class MainMenuScreenState : IState
     {
 
+        WirteNames name;
 
-
-
-
+        public static bool AddwriteNames = false;
+        public static bool tekst = true;
         private static MainMenuScreenState instance;
         public static MainMenuScreenState Instance
         {
@@ -33,27 +33,33 @@ namespace DatabaseProjekt.GameState
         
         public void Draw(SpriteBatch spritebatch)
         {
+        
+         
             foreach (var go in GameWorld.gameObjects)
             {
                 go.Draw(spritebatch);
-            }        
+            }
+          
+            
         }
 
 
 
         public void EnterState()
         {
-           
-         // GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("Curser"));
+            name = new WirteNames();
          
             //det som skal ske før MainMenuScreenState påbegyndes
         }
 
         public void ExitState()
         {
+            foreach (var go in GameWorld.gameObjects)
+            {
+                GameWorld.Remove.Add(go);
+            }
 
-          
-         
+
             //det som skal ske før MainMenuScreenState afsluttes 
         }
 
@@ -61,11 +67,22 @@ namespace DatabaseProjekt.GameState
         {
             GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("StartKnap",content));
             GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("ExitKnap",content));
-           
+            //GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("writenameher2", content));
+           ///GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("writenameher", content));
+
+
         }
 
         public void Update(GameTime gameTime)
         {
+
+            if(StarteButtone.Cliket  == true && AddwriteNames == false)
+            {
+                name.loadContent(GameWorld.GameContent);
+                AddwriteNames = true;
+            }
+          
+
             //update for MainMenuScreenState
         }
     }
