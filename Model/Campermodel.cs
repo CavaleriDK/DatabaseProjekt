@@ -33,7 +33,7 @@ namespace DatabaseProjekt
 
         public static void CreateTable()
             {
-                string sqlexp = "Create table Campermodel (id integer primary key, pref string, maxPay integer, round_number integer, unittype_id integer)";
+                string sqlexp = "CREATE TABLE IF NOT EXISTS Campermodel (id integer primary key, pref string, maxPay integer, round_number integer, unittype_id integer)";
                 SQLiteCommand command = GameWorld.Connection.CreateCommand();
                 command.CommandText = sqlexp;
                 command.ExecuteNonQuery();

@@ -115,7 +115,13 @@ namespace DatabaseProjekt
             Worldzice = new Vector2(GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
 
             ChangeState(MainMenuScreenState.Instance);
-            
+
+
+            // Create tables etc.
+            CampsiteModel.CreateTable();
+            RoundPassedModel.CreateDatabaseStructure();
+            Campermodel.CreateTable();
+            UnitTypeModel.CreateTable();
 
             base.Initialize();
         }

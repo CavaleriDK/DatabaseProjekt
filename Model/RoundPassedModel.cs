@@ -11,8 +11,8 @@ namespace DatabaseProjekt
     {
         static string tableName = "RoundPassed";
         static string extraTableName = "RoundPassedUnitType";
-        string RoundPassedQuery = "CREATE TABLE IF NOT EXISTS " + tableName + "(id integer primary key, campingplads_income integer, campingplads_id integer, round_number integer)";
-        string RoundPassedUnitTypeQuery = "CREATE TABLE IF NOT EXISTS " + extraTableName + "(id integer primary key, round_passed_id integer, unit_type_id integer, campist_id integer)";
+        static string RoundPassedQuery = "CREATE TABLE IF NOT EXISTS " + tableName + "(id integer primary key, campingplads_income integer, campingplads_id integer, round_number integer)";
+        static string RoundPassedUnitTypeQuery = "CREATE TABLE IF NOT EXISTS " + extraTableName + "(id integer primary key, round_passed_id integer, unit_type_id integer, campist_id integer)";
         string lastInsertRowId = "SELECT last_insert_rowid()";
         
         private int id;
@@ -35,7 +35,7 @@ namespace DatabaseProjekt
         }
 
 
-        public void CreateDatabaseStructure()
+        public static void CreateDatabaseStructure()
         {
             SQLiteCommand cmd = GameWorld.Connection.CreateCommand();
             cmd.CommandText = RoundPassedQuery;
