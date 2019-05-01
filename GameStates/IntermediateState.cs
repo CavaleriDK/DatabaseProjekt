@@ -32,7 +32,7 @@ namespace DatabaseProjekt.GameState
         RoundPassedModel roundPassedForPlayerTwo;
 
         List<RoundPassedUnitTypeModel> roundPassedUnitTypes;
-        // List<Campermodel> campers;
+        List<Campermodel> campers;
 
         int roundNumber;
 
@@ -46,41 +46,39 @@ namespace DatabaseProjekt.GameState
         {
             //logik for det som skal ske før IntermediateState påbegyndes
 
-            /*
+            
             this.roundNumber += 1;
-            roundPassedUnitTypes = new List<RoundPassedUnitTypes>();
+            roundPassedUnitTypes = new List<RoundPassedUnitTypeModel>();
             campers = new List<Campermodel>();
 
-            playerOne = CampsiteController.InsCampCon.PlayerOne;
-            playerTwo = CampsiteController.InsCampCon.PlayerTwo;
+            playerOne = CampsiteController.Instance.PlayerOne;
+            playerTwo = CampsiteController.Instance.PlayerTwo;
 
             // Create rounds
             roundPassedForPlayerOne = new RoundPassedModel(playerOne.ID, this.roundNumber, playerOne.TotalIncome);
             roundPassedForPlayerTwo = new RoundPassedModel(playerTwo.ID, this.roundNumber, playerTwo.TotalIncome);
 
             // Create rounds and unittypes binding
-            foreach(UnitTypeModel unit in CampsiteController.InsCampCon.Units)
+            foreach(UnitTypeModel unit in CampsiteController.Instance.Units)
             {
-                if (unit.CampingpladsId == playerOne.ID)
+                if (unit.CampingGroundsID == playerOne.ID)
                 {
-                    roundPassedUnitTypes.Add( new RoundPassedUnitType(roundPassedForPlayerOne.ID, unit.ID) );
+                    roundPassedUnitTypes.Add( new RoundPassedUnitTypeModel(roundPassedForPlayerOne.ID, unit.ID) );
                 }
-                else if (unit.CampingpladsId == playerTwo.ID)
+                else if (unit.CampingGroundsID == playerTwo.ID)
                 {
-                    roundPassedUnitTypes.Add( new RoundPassedUnitType(roundPassedForPlayerTwo.ID, unit.ID) );
+                    roundPassedUnitTypes.Add( new RoundPassedUnitTypeModel(roundPassedForPlayerTwo.ID, unit.ID) );
                 }
             }
 
             // Create 30 campers
-            campers = CamperFactory.CreateCampers();
+            campers = GameObjects.CamperFactory.Instance.CreateCamper(this.roundNumber);
 
             // Check if campers want to live anywhere
             foreach(Campermodel campist in campers)
             {
                 HandleCamperLivingSomewhereFunctionality(campist);
             }
-            */
-
 
         }
 
@@ -107,7 +105,7 @@ namespace DatabaseProjekt.GameState
         }
 
 
-        /*
+        
         private void HandleCamperLivingSomewhereFunctionality(Campermodel campist)
         {
             // Get a list of non-occupied roundpassedunittypes fra spiller 1 og to i roundpassedunittype listen
@@ -121,7 +119,7 @@ namespace DatabaseProjekt.GameState
             });
 
             // Get the list of actual unit types fra spiller 1 og 2
-            List<UnitTypes> freeUnitTypes = CampsiteController.InsCampCon.Units.FindAll((unit) => 
+            List<UnitTypeModel> freeUnitTypes = CampsiteController.Instance.Units.FindAll((unit) => 
             {
                 bool isFree = freeRoundPassedUnitTypes.Exists((frput) => 
                 {
@@ -133,7 +131,7 @@ namespace DatabaseProjekt.GameState
             
 
             // Find a free unit type hos spliller 1, som er samme type osm campist leder efter
-            UnitTypeModel playerOneUnitType freeUnitTypes.FirstOrDefault((unit) => 
+            UnitTypeModel playerOneUnitType = freeUnitTypes.FirstOrDefault((unit) => 
             {
                 return (unit.Type == campist.Pref && unit.CampingGroundsID == playerOne.ID) ? true : false;
             });
@@ -145,7 +143,7 @@ namespace DatabaseProjekt.GameState
             });
 
             // Check which player the camper prefers to choose
-            CampsiteModel chosenPlayer;
+            CampsiteModel chosenPlayer = null;
             if(playerOneUnitType == null && playerTwoUnitType == null)
             {
                 chosenPlayer = null;
@@ -189,7 +187,7 @@ namespace DatabaseProjekt.GameState
                     if (chosenPlayer.ID == playerOne.ID)
                     {
                         // Get the RP unit
-                        RoundPassedUnitType rput = freeRoundPassedUnitTypes.FirstOrDefault( (frupt) =>
+                        RoundPassedUnitTypeModel rput = freeRoundPassedUnitTypes.FirstOrDefault( (frupt) =>
                         {
                             return (frupt.UnitTypeID == playerOneUnitType.ID) ? true : false;
                         });
@@ -198,7 +196,7 @@ namespace DatabaseProjekt.GameState
                     }
                     else if (chosenPlayer.ID == playerTwo.ID)
                     {
-                        RoundPassedUnitType rput = freeRoundPassedUnitTypes.FirstOrDefault( (frupt) =>
+                        RoundPassedUnitTypeModel rput = freeRoundPassedUnitTypes.FirstOrDefault( (frupt) =>
                         {
                             return (frupt.UnitTypeID == playerTwoUnitType.ID) ? true : false;
                         });
@@ -212,12 +210,15 @@ namespace DatabaseProjekt.GameState
         private void MoveCamperIntoTheFrickinSiteAndUpdateIncomeFunctionality (CampsiteModel player, Campermodel campist, RoundPassedModel rp, RoundPassedUnitTypeModel rput)
         {
             // Add camper to the unit
-            rput.AddCamper(campist.ID);
+            rput.AddCampist(campist.ID);
+
+            // Set campist to have et id for pladsen
+            campist.ChangeUnitTypeID(rput.UnitTypeID);
 
             if (campist.Pref == "Tent")
             {
                 // Update income for campsitemodel
-                playerOne.ChangeTotalEarning(playerOne.PriceOfTent);
+                playerOne.ChangeTotalIncome(playerOne.PriceOfTent);
 
                 // Update income for roundpassed model
                 rp.UpdateIncome(playerOne.PriceOfTent);
@@ -225,12 +226,12 @@ namespace DatabaseProjekt.GameState
             else if (campist.Pref == "Caravan")
             {
                 // Update income for campsitemodel
-                playerOne.ChangeTotalEarning(playerOne.PriceOfTent);
+                playerOne.ChangeTotalIncome(playerOne.PriceOfTent);
 
                 // Update income for roundpassed model
                 rp.UpdateIncome(playerOne.PriceOfTent);
             }
         }
-        */
+        
     }
 }
