@@ -99,12 +99,12 @@ namespace DatabaseProjekt.Factorys
                     break;
                 case "writenameher":
                     go.addComponet(new SpriteRender(type));
-                    go.addComponet(new WriteName1(new Vector2(200, 200)));
+                    go.addComponet(new WriteName1(new Vector2(300, 100)));
                     go.LoadContent(content);
                     break;
                 case "writenameher2":
                     go.addComponet(new SpriteRender("writenameher"));
-                    go.addComponet(new Writename2(new Vector2(200, 400)));
+                    go.addComponet(new Writename2(new Vector2(300, 600)));
                     go.LoadContent(content);
                     break;
 
@@ -168,12 +168,12 @@ namespace DatabaseProjekt.Factorys
                     break;
                 case "writenameher":
                     go.addComponet(new SpriteRender(type));
-                    go.addComponet(new WriteName1(new Vector2(200, 200)));
+                    go.addComponet(new WriteName1(new Vector2(300, 200)));
                     go.LoadContent(content);
                     break;
                 case "writenameher2":
                     go.addComponet(new SpriteRender(type));
-                    go.addComponet(new Writename2(new Vector2(200, 400)));
+                    go.addComponet(new Writename2(new Vector2(300, 600)));
                     go.LoadContent(content);
                     break;
 

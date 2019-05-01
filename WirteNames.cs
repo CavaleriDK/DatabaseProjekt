@@ -34,7 +34,7 @@ namespace DatabaseProjekt.GameObjects
            
             GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("writenameher2", content));
             GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("writenameher", content));
-            GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("StartKnap", new Vector2(600, 300), content));
+            GameWorld.gameObjects.Add(ObejteFactory.Insteance.Create("StartKnap", new Vector2(900, 300), content));
         }
 
         private static string removeLastChar(string str)

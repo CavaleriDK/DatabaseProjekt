@@ -134,8 +134,8 @@ namespace DatabaseProjekt.GameObjects
         }
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.DrawString(Player1Name, $"Player 1 Name:{WirteNames.Player1 }", new Vector2(150, 200), Color.Black);
-            spriteBatch.DrawString(Player2Name, $"Player 2 Name:{WirteNames.Player2 }", new Vector2(150, 400), Color.Black);
+            spriteBatch.DrawString(Player1Name, $"Player 1 Name:{WirteNames.Player1 }", new Vector2(250, 100), Color.Black);
+            spriteBatch.DrawString(Player2Name, $"Player 2 Name:{WirteNames.Player2 }", new Vector2(250, 600), Color.Black);
             base.Draw(spriteBatch);
         }
 
