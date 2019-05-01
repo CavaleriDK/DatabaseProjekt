@@ -117,6 +117,9 @@ namespace DatabaseProjekt.GameObjects
                     CLICK = "pressed";
                     wirteNames.Write_Name2();
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 92b7f50... lsl
+=======
 >>>>>>> parent of 92b7f50... lsl
 =======
 >>>>>>> parent of 92b7f50... lsl
@@ -132,6 +135,7 @@ namespace DatabaseProjekt.GameObjects
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
             if (Cliket == true)
             {
@@ -143,6 +147,8 @@ namespace DatabaseProjekt.GameObjects
                 }
             }
 
+=======
+>>>>>>> parent of 92b7f50... lsl
 =======
 >>>>>>> parent of 92b7f50... lsl
 =======

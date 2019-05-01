@@ -20,8 +20,12 @@ namespace DatabaseProjekt.GameObjects
         public static string CLICK;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         SpriteFont Player1Name;
         SpriteFont Player2Name;
+=======
+        public static bool Cliket;
+>>>>>>> parent of 92b7f50... lsl
 =======
         public static bool Cliket;
 >>>>>>> parent of 92b7f50... lsl

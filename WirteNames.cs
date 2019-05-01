@@ -22,6 +22,7 @@ namespace DatabaseProjekt.GameObjects
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   
 
         DontLookAtMe Write;
@@ -30,6 +31,9 @@ namespace DatabaseProjekt.GameObjects
         
 =======
         public static string Player1, Player2;
+=======
+        public static string Player1, Player2;
+>>>>>>> parent of 92b7f50... lsl
 =======
         public static string Player1, Player2;
 >>>>>>> parent of 92b7f50... lsl
@@ -63,6 +67,7 @@ namespace DatabaseProjekt.GameObjects
 >>>>>>> parent of 59b57df...  mmklpp
         }
             
+<<<<<<< HEAD
 
 
         public char Writebogstav()
@@ -83,6 +88,14 @@ namespace DatabaseProjekt.GameObjects
 
 >>>>>>> parent of 92b7f50... lsl
 =======
+            //Keys key;
+
+>>>>>>> parent of 92b7f50... lsl
+=======
+
+
+        public char Writebogstav()
+        {
             //Keys key;
 
 >>>>>>> parent of 92b7f50... lsl
@@ -111,8 +124,11 @@ namespace DatabaseProjekt.GameObjects
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         public void Write_name1()
         {      
+=======
+>>>>>>> parent of 92b7f50... lsl
 =======
 >>>>>>> parent of 92b7f50... lsl
 =======
@@ -128,9 +144,13 @@ namespace DatabaseProjekt.GameObjects
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 =======
         
+=======
+
+>>>>>>> parent of 92b7f50... lsl
 =======
 
 >>>>>>> parent of 92b7f50... lsl
