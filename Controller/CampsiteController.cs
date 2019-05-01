@@ -214,7 +214,7 @@ namespace DatabaseProjekt
             }
             else
             {
-                GameWorld.ChangeState(PlayerOneTurnState.InsPlayerOne);
+                GameWorld.ChangeState(IntermediateState.Instance);
             }
         }
     }

@@ -235,8 +235,7 @@ namespace DatabaseProjekt
             base.Draw(gameTime);
         }
 
-        
-    public static void ChangeState(IState NewState)
+        public static void ChangeState(IState NewState)
         {
             if(currentState != null)
             {
