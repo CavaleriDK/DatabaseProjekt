@@ -10,6 +10,7 @@ namespace DatabaseProjekt.GameState
 {
     public interface IState
     {
+        string StateName { get; }
         void EnterState();
         void ExitState();
         void Update(GameTime gameTime);

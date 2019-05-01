@@ -23,17 +23,17 @@ namespace DatabaseProjekt
         public CampsiteModel PlayerTwo { get => playerTwo; }
         public List<UnitTypeModel> Units { get => units; }
 
-        private static CampsiteController insCampCon;
+        private static CampsiteController instance;
 
-        public static CampsiteController InsCampCon
+        public static CampsiteController Instance
         {
             get
             {
-                if(insCampCon == null)
+                if(instance == null)
                 {
-                    insCampCon = new CampsiteController();
+                    instance = new CampsiteController();
                 }
-                return insCampCon;
+                return instance;
             }
         }
 
@@ -41,7 +41,7 @@ namespace DatabaseProjekt
         {
 
         }
-
+        
         public void AddCampsiteByName(string name, bool isPlayerOne)
         {
             if(isPlayerOne == true)

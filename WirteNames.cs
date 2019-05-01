@@ -58,14 +58,16 @@ namespace DatabaseProjekt.GameObjects
        
 
         public void Write_name1(GameTime gameTime)
-        {      
+        {
 
-         Player1 =  Write.Writebogstav(15);
+            Player1 = Write.Writebogstav(15);
+            CampsiteController.Instance.AddCampsiteByName(Player1, true);
         }
 
         public void Write_Name2()
         {
-         Player2 = Write.Writebogstav(15);
+            Player2 = Write.Writebogstav(15);
+            CampsiteController.Instance.AddCampsiteByName(Player2, false);
         }
         
         public void Draw(SpriteBatch spriteBatch)

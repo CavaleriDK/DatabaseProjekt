@@ -135,6 +135,46 @@ namespace DatabaseProjekt
             {
                 str += "z";
             }
+            if (keyStart.IsKeyDown(Keys.Z) && laststate.IsKeyUp(Keys.Z) && !keyStart.IsKeyDown(Keys.LeftShift))
+            {
+                str += "1";
+            }
+            if (keyStart.IsKeyDown(Keys.Z) && laststate.IsKeyUp(Keys.Z) && !keyStart.IsKeyDown(Keys.LeftShift))
+            {
+                str += "2";
+            }
+            if (keyStart.IsKeyDown(Keys.Z) && laststate.IsKeyUp(Keys.Z) && !keyStart.IsKeyDown(Keys.LeftShift))
+            {
+                str += "3";
+            }
+            if (keyStart.IsKeyDown(Keys.Z) && laststate.IsKeyUp(Keys.Z) && !keyStart.IsKeyDown(Keys.LeftShift))
+            {
+                str += "4";
+            }
+            if (keyStart.IsKeyDown(Keys.Z) && laststate.IsKeyUp(Keys.Z) && !keyStart.IsKeyDown(Keys.LeftShift))
+            {
+                str += "5";
+            }
+            if (keyStart.IsKeyDown(Keys.Z) && laststate.IsKeyUp(Keys.Z) && !keyStart.IsKeyDown(Keys.LeftShift))
+            {
+                str += "6";
+            }
+            if (keyStart.IsKeyDown(Keys.Z) && laststate.IsKeyUp(Keys.Z) && !keyStart.IsKeyDown(Keys.LeftShift))
+            {
+                str += "7";
+            }
+            if (keyStart.IsKeyDown(Keys.Z) && laststate.IsKeyUp(Keys.Z) && !keyStart.IsKeyDown(Keys.LeftShift))
+            {
+                str += "8";
+            }
+            if (keyStart.IsKeyDown(Keys.Z) && laststate.IsKeyUp(Keys.Z) && !keyStart.IsKeyDown(Keys.LeftShift))
+            {
+                str += "9";
+            }
+            if (keyStart.IsKeyDown(Keys.Z) && laststate.IsKeyUp(Keys.Z) && !keyStart.IsKeyDown(Keys.LeftShift))
+            {
+                str += "0";
+            }
 
             /// big 
 
@@ -371,6 +411,46 @@ namespace DatabaseProjekt
                 if (keyStart.IsKeyDown(Keys.Z) && laststate.IsKeyUp(Keys.Z) && !keyStart.IsKeyDown(Keys.LeftShift))
                 {
                     str += "z";
+                }
+                if (keyStart.IsKeyDown(Keys.Z) && laststate.IsKeyUp(Keys.Z) && !keyStart.IsKeyDown(Keys.LeftShift))
+                {
+                    str += "1";
+                }
+                if (keyStart.IsKeyDown(Keys.Z) && laststate.IsKeyUp(Keys.Z) && !keyStart.IsKeyDown(Keys.LeftShift))
+                {
+                    str += "2";
+                }
+                if (keyStart.IsKeyDown(Keys.Z) && laststate.IsKeyUp(Keys.Z) && !keyStart.IsKeyDown(Keys.LeftShift))
+                {
+                    str += "3";
+                }
+                if (keyStart.IsKeyDown(Keys.Z) && laststate.IsKeyUp(Keys.Z) && !keyStart.IsKeyDown(Keys.LeftShift))
+                {
+                    str += "4";
+                }
+                if (keyStart.IsKeyDown(Keys.Z) && laststate.IsKeyUp(Keys.Z) && !keyStart.IsKeyDown(Keys.LeftShift))
+                {
+                    str += "5";
+                }
+                if (keyStart.IsKeyDown(Keys.Z) && laststate.IsKeyUp(Keys.Z) && !keyStart.IsKeyDown(Keys.LeftShift))
+                {
+                    str += "6";
+                }
+                if (keyStart.IsKeyDown(Keys.Z) && laststate.IsKeyUp(Keys.Z) && !keyStart.IsKeyDown(Keys.LeftShift))
+                {
+                    str += "7";
+                }
+                if (keyStart.IsKeyDown(Keys.Z) && laststate.IsKeyUp(Keys.Z) && !keyStart.IsKeyDown(Keys.LeftShift))
+                {
+                    str += "8";
+                }
+                if (keyStart.IsKeyDown(Keys.Z) && laststate.IsKeyUp(Keys.Z) && !keyStart.IsKeyDown(Keys.LeftShift))
+                {
+                    str += "9";
+                }
+                if (keyStart.IsKeyDown(Keys.Z) && laststate.IsKeyUp(Keys.Z) && !keyStart.IsKeyDown(Keys.LeftShift))
+                {
+                    str += "0";
                 }
 
                 /// big 

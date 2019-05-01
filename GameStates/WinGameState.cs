@@ -11,6 +11,7 @@ namespace DatabaseProjekt.GameState
 {
     class WinGameState : IState
     {
+        public string StateName { get => "WinGameState"; }
         public void Draw(SpriteBatch spriteBatch)
         {
             //draw WinGameState
