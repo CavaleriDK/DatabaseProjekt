@@ -28,7 +28,7 @@ namespace DatabaseProjekt.GameState
         public void Draw(SpriteBatch spriteBatch)
         {
             //draw PlayerOneTurnState
-            foreach(GameObject go in GameWorld.playerOneGameObjects)
+            foreach(GameObject go in GameWorld.playerOneTurnStateGameObjects)
             {
                 go.Draw(spriteBatch);
             }
