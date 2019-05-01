@@ -129,7 +129,7 @@ namespace DatabaseProjekt.Factorys
                     break;
                 case "StartKnap":
                     go.addComponet(new SpriteRender(type));
-                    go.addComponet(new StarteButtone(Position));
+                    go.addComponet(new StarteButton(Position));
                     
 
                     break;
@@ -158,7 +158,12 @@ namespace DatabaseProjekt.Factorys
                     break;
                 case "StartKnap":
                     go.addComponet(new SpriteRender(type));
+<<<<<<< HEAD
                     go.addComponet(new StarteButtone(Position));
+=======
+                    go.addComponet(new StarteButton());
+                 
+>>>>>>> parent of 94ca0fa... das
                     go.LoadContent(content);
                     break;
                 case "ExitKnap":

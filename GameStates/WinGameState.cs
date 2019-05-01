@@ -1,5 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -25,12 +24,6 @@ namespace DatabaseProjekt.GameState
         {
             //det som skal ske før WinGameState afsluttes
         }
-
-        public void load(ContentManager content)
-        {
-            throw new NotImplementedException();
-        }
-
         public void Update(GameTime gameTime)
         {
             //update for WinGameState

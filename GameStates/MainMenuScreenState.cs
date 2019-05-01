@@ -7,13 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DatabaseProjekt.GameObjects;
-using DatabaseProjekt.Factorys;
-using Microsoft.Xna.Framework.Content;
 
 namespace DatabaseProjekt.GameState
 {
     class MainMenuScreenState : IState
     {
+<<<<<<< HEAD
 
         WirteNames name;
 
@@ -50,19 +49,26 @@ namespace DatabaseProjekt.GameState
             
 =======
 >>>>>>> parent of 59b57df...  mmklpp
+=======
+        public void Draw(SpriteBatch spritebatch)
+        {
+            //draw MainMenuScreenState
+>>>>>>> parent of 94ca0fa... das
         }
-
-
 
         public void EnterState()
         {
+<<<<<<< HEAD
             name = new WirteNames();
          
+=======
+>>>>>>> parent of 94ca0fa... das
             //det som skal ske før MainMenuScreenState påbegyndes
         }
 
         public void ExitState()
         {
+<<<<<<< HEAD
             foreach (var go in GameWorld.gameObjects)
             {
                 GameWorld.Remove.Add(go);
@@ -82,6 +88,11 @@ namespace DatabaseProjekt.GameState
 
         }
 
+=======
+            //det som skal ske før MainMenuScreenState afsluttes 
+        }
+
+>>>>>>> parent of 94ca0fa... das
         public void Update(GameTime gameTime)
         {
 

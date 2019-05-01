@@ -22,6 +22,11 @@ namespace DatabaseProjekt
         SpriteFont font;
         public static bool ExitGame = false;
 
+<<<<<<< HEAD
+=======
+
+        WirteNames wirteNames;
+>>>>>>> parent of 94ca0fa... das
         private static GameWorld instance;
         public static GameWorld Instance
         {
@@ -87,7 +92,7 @@ namespace DatabaseProjekt
             //database skal vaere her
             
             Connection.Open();
-           
+
             Content = Content;
             GameContent = Content;
             graphics = new GraphicsDeviceManager(this);
@@ -114,8 +119,21 @@ namespace DatabaseProjekt
             /// setting world zise to vector2
             Worldzice = new Vector2(GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
 
+<<<<<<< HEAD
             ChangeState(MainMenuScreenState.Instance);
             
+=======
+            // adding curser to GameObejtes
+          //  curser = ObejteFactory.Insteance.Create("Curser");
+          //  gameObjects.Add(ObejteFactory.Insteance.Create("Curser"));
+            gameObjects.Add(ObejteFactory.Insteance.Create("StartKnap"));
+            
+            gameObjects.Add(ObejteFactory.Insteance.Create("StartKnap", new Vector2(400, 200)) );
+            gameObjects.Add(ObejteFactory.Insteance.Create("StartKnap", new Vector2(200, 200) ));
+
+        
+
+>>>>>>> parent of 94ca0fa... das
 
             base.Initialize();
         }
@@ -134,6 +152,20 @@ namespace DatabaseProjekt
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             font = Content.Load<SpriteFont>("font");
+<<<<<<< HEAD
+=======
+
+
+
+            // adding curser to GameObejtes
+            //  curser = ObejteFactory.Insteance.Create("Curser");
+            wirteNames.loadContent(Content);
+            gameObjects.Add(ObejteFactory.Insteance.Create("Curser"));
+            gameObjects.Add(ObejteFactory.Insteance.Create("StartKnap"));
+            gameObjects.Add(ObejteFactory.Insteance.Create("ExitKnap"));
+            gameObjects.Add(ObejteFactory.Insteance.Create("writenameher"));
+            gameObjects.Add(ObejteFactory.Insteance.Create("writenameher2"));
+>>>>>>> parent of 94ca0fa... das
 
             MainMenuScreenState.Instance.load(Content);
 
@@ -192,6 +224,9 @@ namespace DatabaseProjekt
             //}
 
             //addGameObejts.Clear();
+
+
+
             // TODO: Add your update logic here
 
 
@@ -217,7 +252,9 @@ namespace DatabaseProjekt
 
             // TODO: Add your drawing code here
 
+
             spriteBatch.Begin();
+
 
           // draws gameObejts 
             //foreach (var go in gameObjects)
@@ -225,9 +262,27 @@ namespace DatabaseProjekt
             //    go.Draw(spriteBatch);
             //}
 
+<<<<<<< HEAD
             currentState.Draw(spriteBatch);
           
           //  spriteBatch.DrawString(font, $"mouse Positio check col: {StarteButtone.CLICK} and {ExitButton.CLICK}" , new Vector2(300, 5), Color.Red);           
+=======
+            foreach (var go in gameObjects)
+            {
+                go.Draw(spriteBatch);
+            }
+
+
+            spriteBatch.DrawString(font, $"Player Position: check col: {StarteButton.CLICK}", new Vector2(300, 5), Color.Red);
+
+            //currentState.Draw(spriteBatch);
+
+            wirteNames.Draw(spriteBatch);
+            spriteBatch.DrawString(font, $"mouse Positio check col: {StarteButtone.CLICK} and {ExitButton.CLICK}" , new Vector2(300, 5), Color.Red);
+
+          
+
+>>>>>>> parent of 94ca0fa... das
             spriteBatch.End();
 
             base.Draw(gameTime);

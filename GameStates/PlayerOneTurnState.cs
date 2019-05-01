@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace DatabaseProjekt.GameState
@@ -42,11 +41,6 @@ namespace DatabaseProjekt.GameState
         public void ExitState()
         {
             //logik for det som skal ske før afslutning af PlayerOneTurnState
-        }
-
-        public void load(ContentManager content)
-        {
-            throw new NotImplementedException();
         }
 
         public void Update(GameTime gameTime)
