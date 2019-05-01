@@ -16,10 +16,12 @@ namespace DatabaseProjekt.GameState
     {
 
 
+
         WirteNames name;
 
         public bool AddwriteNames = false;
         public static bool tekst = true;
+
 
 
         private static MainMenuScreenState instance;
